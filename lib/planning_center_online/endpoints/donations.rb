@@ -2,19 +2,19 @@
 
 module PlanningCenterOnline
   module Endpoints
-    module People
-      def person(id, params = {})
+    module Donations
+      def donation(id, params = {})
         get(
-          "people/v2/people/#{id}",
+          "giving/v2/donations/#{id}",
           params
         )
       end
 
-      def people(params = {})
-        # We need to order the people by a value (created_at being the default),
+      def donations(params = {})
+        # We need to order the donations by a value (created_at being the default),
         # because the results are not consistently ordered without it.
         get(
-          'people/v2/people',
+          'giving/v2/donations',
           { order: :created_at }.merge(params)
         )
       end

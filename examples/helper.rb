@@ -4,8 +4,13 @@ require 'pry'
 require 'active_support/inflector'
 require_relative '../lib/planning_center_online'
 require_relative 'helpers/campuses'
+require_relative 'helpers/designation_refunds'
+require_relative 'helpers/donations'
 require_relative 'helpers/funds'
 require_relative 'helpers/people'
+require_relative 'helpers/recurring_donation_designations'
+require_relative 'helpers/recurring_donations'
+require_relative 'helpers/refunds'
 
 require 'dotenv'
 Dotenv.load('../.env')
