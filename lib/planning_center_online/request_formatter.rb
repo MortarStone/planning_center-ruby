@@ -16,16 +16,15 @@ module PlanningCenterOnline
     private
 
     def default_params
-      { page_size: 100, page: 1 }
+      { per_page: 100, offset: 0 }
     end
 
     def stringify_params
       arr = []
       default_params.merge(params).map do |k, v|
-        case v
-        when is_a?(Array)
+        if v.is_a?(Array)
           v = v.join('%2C')
-        when is_a?(Date)
+        elsif is_a?(Date)
           v = v.strftime('%Y-%m-%d')
         end
         arr << "#{k}=#{v}"

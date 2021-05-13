@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Essentially copied from https://github.com/planningcenter/pco_api_ruby/blob/master/lib/pco/api/errors.rb
+
 module PlanningCenterOnline
   module Exceptions
     class AuthRequiredError < StandardError; end

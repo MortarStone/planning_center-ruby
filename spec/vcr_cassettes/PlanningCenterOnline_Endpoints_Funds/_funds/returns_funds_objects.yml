@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.planningcenteronline.com/giving/v2/funds?offset=0&per_page=25
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer c5877e58c0bd9e15b6e451229d6eb6a183a0f15ff7cda3f78ebec41c4a7d4e4f
+      User-Agent:
+      - Faraday v1.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 13 May 2021 20:37:52 GMT
+      content-type:
+      - application/vnd.api+json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - no-referrer-when-downgrade
+      x-pco-api-auth-method:
+      - OAuth2
+      x-pco-api-request-rate-count:
+      - '10'
+      x-pco-api-request-rate-limit:
+      - '100'
+      x-pco-api-request-rate-period:
+      - '20'
+      x-pco-api-processor:
+      - ENG_3.9.2.1
+      access-control-allow-credentials:
+      - 'true'
+      access-control-expose-headers:
+      - ETag, Link, X-PCO-API-Auth-Method, X-PCO-API-Request-Rate-Count, X-PCO-API-Request-Rate-Limit,
+        X-PCO-API-Request-Rate-Period, Retry-After
+      access-control-allow-headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since, Origin, X-Requested-With, X-CSRF-Token, X-PCO-API-Version,
+        X-PCO-API-Log-Level, X-PCO-API-Tracer-Class, X-PCO-API-Tracer-Secret
+      access-control-allow-methods:
+      - GET, POST, PATCH, PUT, DELETE, OPTIONS
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept, Accept-Encoding, Origin
+      x-pco-api-processed-as-version:
+      - '2019-10-18'
+      etag:
+      - W/"2fc8855c702306a747a0bb1bc62e6ab9"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 8ea1d3e7-bcb0-466e-95d8-01a48988e8e2
+      x-runtime:
+      - '0.133246'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds?offset=0&per_page=25","next":"https://api.planningcenteronline.com/giving/v2/funds?offset=25&per_page=25"},"data":[{"type":"Fund","id":"118284","attributes":{"color":"#a1a1a1","created_at":"2019-11-21T18:12:38Z","default":true,"deletable":false,"description":"This
+        discretionary money can be used where it''s needed most.","ledger_code":null,"name":"General","updated_at":"2020-02-11T17:05:31Z","visibility":"everywhere"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/118284"}},{"type":"Fund","id":"169791","attributes":{"color":"#a1a1a1","created_at":"2020-11-24T17:51:20Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"The
+        Well Institute ","updated_at":"2020-11-24T17:51:20Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/169791"}},{"type":"Fund","id":"165992","attributes":{"color":"#d99fca","created_at":"2020-10-30T02:41:55Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"Fidelity/Benevity","updated_at":"2020-10-30T02:41:55Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/165992"}},{"type":"Fund","id":"154237","attributes":{"color":"#c0a0d2","created_at":"2020-07-08T03:13:52Z","default":false,"deletable":false,"description":"College
+        Ministry Intern","ledger_code":null,"name":"Reuben Lewis","updated_at":"2020-07-08T03:13:52Z","visibility":"everywhere"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/154237"}},{"type":"Fund","id":"131738","attributes":{"color":"#c0a0d2","created_at":"2020-02-10T21:07:32Z","default":false,"deletable":false,"description":"Worship
+        Resident","ledger_code":null,"name":"Mary Graham ","updated_at":"2020-02-10T21:08:33Z","visibility":"everywhere"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/131738"}},{"type":"Fund","id":"131737","attributes":{"color":"#cfab77","created_at":"2020-02-10T21:06:54Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"Acceleration
+        Fund","updated_at":"2020-02-10T21:06:54Z","visibility":"everywhere"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/131737"}},{"type":"Fund","id":"128191","attributes":{"color":"#b2cf74","created_at":"2020-01-22T23:12:12Z","default":false,"deletable":false,"description":"Connections
+        Coordinator","ledger_code":null,"name":"Juli Quintero","updated_at":"2020-02-10T21:08:18Z","visibility":"everywhere"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/128191"}},{"type":"Fund","id":"126843","attributes":{"color":"#f59b79","created_at":"2020-01-16T04:43:45Z","default":false,"deletable":false,"description":"Missions
+        Resident","ledger_code":null,"name":"Tyler Collins","updated_at":"2020-01-16T04:49:56Z","visibility":"everywhere"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/126843"}},{"type":"Fund","id":"118285","attributes":{"color":"#d99fca","created_at":"2019-11-21T18:26:34Z","default":false,"deletable":false,"description":"Church
+        Plant Resident ","ledger_code":null,"name":"Juhan Kim ","updated_at":"2020-02-10T21:04:36Z","visibility":"everywhere"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/118285"}},{"type":"Fund","id":"147175","attributes":{"color":"#a1a1a1","created_at":"2020-04-23T17:55:53Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"China
+        Mission Trip - K. Pesyna","updated_at":"2020-04-23T17:55:53Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/147175"}},{"type":"Fund","id":"147174","attributes":{"color":"#a1a1a1","created_at":"2020-04-23T17:55:47Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"India:
+        Anthony Wilson","updated_at":"2020-04-23T17:55:47Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/147174"}},{"type":"Fund","id":"140193","attributes":{"color":"#78afce","created_at":"2020-03-21T17:04:04Z","default":false,"deletable":false,"description":"Gifts
+        designated towards this fund will go towards meeting financial needs related
+        to the economic hardship our church family is currently experiencing due to
+        the Coronavirus. ","ledger_code":null,"name":"COVID-19 Response Fund","updated_at":"2020-05-11T22:16:06Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/140193"}},{"type":"Fund","id":"146934","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:14:25Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"2018
+        Brazil Short Term Mission Trip","updated_at":"2020-04-21T22:14:25Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146934"}},{"type":"Fund","id":"146933","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:14:10Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"210
+        Project","updated_at":"2020-04-21T22:14:10Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146933"}},{"type":"Fund","id":"146932","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:14:01Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"ADRN
+        Flood Relief","updated_at":"2020-04-21T22:14:01Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146932"}},{"type":"Fund","id":"146931","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:13:49Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"Bob
+        Robbins Support","updated_at":"2020-04-21T22:13:49Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146931"}},{"type":"Fund","id":"146930","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:13:37Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"Campbell
+        Elementary","updated_at":"2020-04-21T22:13:37Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146930"}},{"type":"Fund","id":"146929","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:13:24Z","default":false,"deletable":true,"description":"The
+        Well Camping Trip","ledger_code":null,"name":"Camping Trip","updated_at":"2020-04-21T22:13:24Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146929"}},{"type":"Fund","id":"146928","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:13:06Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"China
+        Mission Trip E Leonard","updated_at":"2020-04-21T22:13:06Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146928"}},{"type":"Fund","id":"146927","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:12:44Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"China
+        Mission Trip J Quint","updated_at":"2020-04-21T22:12:44Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146927"}},{"type":"Fund","id":"146925","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:12:29Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"China
+        Mission Trip Krystal","updated_at":"2020-04-21T22:12:29Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146925"}},{"type":"Fund","id":"146924","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:12:08Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"China
+        Mission Trip - T.Mayo","updated_at":"2020-04-21T22:12:08Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146924"}},{"type":"Fund","id":"146922","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:11:44Z","default":false,"deletable":false,"description":"Printing","ledger_code":null,"name":"Genesis
+        Devotion ","updated_at":"2020-04-21T22:11:44Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146922"}},{"type":"Fund","id":"146921","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:11:29Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"India:
+        David & Katie Tighe","updated_at":"2020-04-21T22:11:29Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146921"}},{"type":"Fund","id":"146920","attributes":{"color":"#a1a1a1","created_at":"2020-04-21T22:11:16Z","default":false,"deletable":false,"description":null,"ledger_code":null,"name":"Josh
+        Guerrero Church Plant Support","updated_at":"2020-04-21T22:11:16Z","visibility":"admin_only"},"links":{"self":"https://api.planningcenteronline.com/giving/v2/funds/146920"}}],"included":[],"meta":{"total_count":36,"count":25,"next":{"offset":25},"can_query_by":["default","name"],"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Thu, 13 May 2021 20:37:52 GMT
+recorded_with: VCR 6.0.0

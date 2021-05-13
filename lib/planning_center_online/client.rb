@@ -27,7 +27,6 @@ module PlanningCenterOnline
       @connection ||=
         Faraday.new(url, request: { timeout: 300_000 }) do |conn|
           conn.authorization :Bearer, @access_token
-          conn.adapter :excon
         end
     end
 
