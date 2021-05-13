@@ -8,6 +8,7 @@ module PlanningCenterOnline
       attr_reader :status, :detail, :headers
 
       def initialize(response)
+        super
         @status = response.status
         @detail = response.body
         @headers = response.headers
