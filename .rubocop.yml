@@ -14,6 +14,8 @@ Layout/LineLength:
   Enabled: false
 Metrics/BlockLength:
   Max: 55
+  Exclude:
+    - 'spec/**/*'
 Style/RescueModifier:
   Enabled: false
 Style/ClassAndModuleChildren:
