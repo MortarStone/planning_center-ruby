@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'planning_center_online'
+require 'planning_center'
 require 'dotenv/load'
 require 'pry'
 require 'faraday'

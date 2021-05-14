@@ -2,7 +2,7 @@
 
 require 'pry'
 require 'active_support/inflector'
-require_relative '../lib/planning_center_online'
+require_relative '../lib/planning_center'
 require_relative 'helpers/campuses'
 require_relative 'helpers/designation_refunds'
 require_relative 'helpers/donations'
@@ -15,8 +15,8 @@ require_relative 'helpers/refunds'
 require 'dotenv'
 Dotenv.load('../.env')
 
-@client = PlanningCenterOnline::Client.new(
-  ENV['ACCESS_TOKEN']
+@client = PlanningCenter::Client.new(
+  access_token: ENV['ACCESS_TOKEN']
 )
 
 def print_list(object_name, pk_id_name, response)

@@ -4,7 +4,7 @@ require 'simplecov'
 SimpleCov.start
 require 'factory_bot'
 require 'bundler/setup'
-require 'planning_center_online'
+require 'planning_center'
 require 'vcr'
 require 'pry'
 require 'dotenv/load'

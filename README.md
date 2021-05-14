@@ -1,13 +1,13 @@
-# PlanningCenterOnline Ruby API
+# PlanningCenter Ruby API
 
-An API wrapper for PlanningCenterOnline written in Ruby.
+An API wrapper for PlanningCenter written in Ruby.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'planning_center_online'
+gem 'planning_center'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install planning_center_online
+    $ gem install planning_center
 
 ## Development
 
@@ -26,7 +26,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/MortarStone/planning_center_online.
+Bug reports and pull requests are welcome on GitHub at https://github.com/MortarStone/planning_center.
 
 ## License
 

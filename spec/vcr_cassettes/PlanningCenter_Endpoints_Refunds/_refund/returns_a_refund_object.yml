@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.planningcenteronline.com/giving/v2/donations/53134447/refund?offset=0&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 26fcff069aa11d2f40ec48876948fce30e322e027a25706ec9e114ee874101c8
+      User-Agent:
+      - Faraday v1.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 14 May 2021 14:15:30 GMT
+      content-type:
+      - application/vnd.api+json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - no-referrer-when-downgrade
+      x-pco-api-auth-method:
+      - OAuth2
+      x-pco-api-request-rate-count:
+      - '28'
+      x-pco-api-request-rate-limit:
+      - '100'
+      x-pco-api-request-rate-period:
+      - '20'
+      x-pco-api-processor:
+      - ENG_3.9.2.1
+      access-control-allow-credentials:
+      - 'true'
+      access-control-expose-headers:
+      - ETag, Link, X-PCO-API-Auth-Method, X-PCO-API-Request-Rate-Count, X-PCO-API-Request-Rate-Limit,
+        X-PCO-API-Request-Rate-Period, Retry-After
+      access-control-allow-headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since, Origin, X-Requested-With, X-CSRF-Token, X-PCO-API-Version,
+        X-PCO-API-Log-Level, X-PCO-API-Tracer-Class, X-PCO-API-Tracer-Secret
+      access-control-allow-methods:
+      - GET, POST, PATCH, PUT, DELETE, OPTIONS
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept, Accept-Encoding, Origin
+      x-pco-api-processed-as-version:
+      - '2019-10-18'
+      etag:
+      - W/"cff64fc7d22044b15d95fb63c9d9382a"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - b2d6a80b-f54b-4676-92a9-196ded9209a9
+      x-runtime:
+      - '0.044197'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"Refund","id":"27505","attributes":{"amount_cents":-2000,"amount_currency":"USD","created_at":"2020-04-05T17:49:09Z","fee_cents":0,"fee_currency":"USD","refunded_at":"2020-04-05T17:49:09Z","updated_at":"2020-04-08T01:04:20Z"},"links":{"designation_refunds":"https://api.planningcenteronline.com/giving/v2/donations/53134447/refund/27505/designation_refunds","self":"https://api.planningcenteronline.com/giving/v2/donations/53134447/refund/27505"}},"included":[],"meta":{"parent":{"id":"53134447","type":"Donation"}}}'
+  recorded_at: Fri, 14 May 2021 14:15:30 GMT
+recorded_with: VCR 6.0.0
