@@ -13,12 +13,11 @@ module PlanningCenter
     include PlanningCenter::Endpoints::RecurringDonations
     include PlanningCenter::Endpoints::Refunds
 
-    attr_accessor :url, :default_params
+    attr_accessor :url
 
     def initialize(access_token:)
       @access_token = access_token
       @url = 'https://api.planningcenteronline.com'
-      @default_params = { page_size: 100, page: 1 }
     end
 
     private

@@ -11,12 +11,12 @@ RSpec.describe PlanningCenter::Endpoints::DesignationRefunds do
     end
 
     it 'returns an array' do
-      expect(@designation_refunds[:data]).to be_an(Array)
+      expect(@designation_refunds['data']).to be_an(Array)
     end
 
     it 'returns designation_refunds objects' do
-      expect(@designation_refunds[:data].first).to be_a(Hash)
-      expect(@designation_refunds[:data].first[:id]).to_not be_nil
+      expect(@designation_refunds['data'].first).to be_a(Hash)
+      expect(@designation_refunds['data'].first['id']).to_not be_nil
     end
   end
 end

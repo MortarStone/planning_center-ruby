@@ -11,16 +11,16 @@ RSpec.describe PlanningCenter::Endpoints::Donations do
     end
 
     it 'returns an array' do
-      expect(@donations[:data]).to be_an(Array)
+      expect(@donations['data']).to be_an(Array)
     end
 
     it 'returns the correct number of objects' do
-      expect(@donations[:data].count).to eq 25
+      expect(@donations['data'].count).to eq 25
     end
 
     it 'returns donations objects' do
-      expect(@donations[:data].first).to be_a(Hash)
-      expect(@donations[:data].first[:id]).to_not be_nil
+      expect(@donations['data'].first).to be_a(Hash)
+      expect(@donations['data'].first['id']).to_not be_nil
     end
   end
 
@@ -31,7 +31,7 @@ RSpec.describe PlanningCenter::Endpoints::Donations do
 
     it 'returns a donation object' do
       expect(@donation).to be_a(Hash)
-      expect(@donation[:data][:id]).to eq('46653783')
+      expect(@donation['data']['id']).to eq('46653783')
     end
   end
 end

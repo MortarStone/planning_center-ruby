@@ -9,7 +9,7 @@ def print_person(item)
 end
 
 def person_columns
-  %i[
+  %w[
     id
     first_name
     last_name

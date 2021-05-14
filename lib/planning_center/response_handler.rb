@@ -44,8 +44,8 @@ module PlanningCenter
     end
 
     def format_response
-      results = JSON.parse(response.body, symbolize_names: true)
-      results[:headers] = response.headers
+      results = JSON.parse(response.body)
+      results['headers'] = response.headers
       results
     end
   end

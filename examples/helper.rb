@@ -20,7 +20,7 @@ Dotenv.load('../.env')
 )
 
 def print_list(object_name, pk_id_name, response)
-  list = response[:data]
+  list = response['data']
   if list.blank?
     puts 'Nothing found'
   else
@@ -48,7 +48,7 @@ end
 def print_row(index, item, column_headers)
   cells = [index]
   column_headers.each do |header|
-    value = header == :id ? item[header] : item[:attributes][header]
+    value = header == 'id' ? item[header] : item['attributes'][header]
     # value = value.to_digits if value.class == BigDecimal
     cells << value
   end
@@ -56,13 +56,13 @@ def print_row(index, item, column_headers)
 end
 
 def print_item(object_name, response)
-  item = response[:data]
+  item = response['data']
   puts
   if item.nil?
     puts 'Item not found'
   else
     column_headers(object_name).each do |header|
-      value = header == :id ? item[header] : item[:attributes][header]
+      value = header == 'id' ? item[header] : item['attributes'][header]
       # value = value.to_digits if value.class == BigDecimal
       puts "#{header}: #{value}"
     end

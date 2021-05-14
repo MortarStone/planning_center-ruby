@@ -9,7 +9,7 @@ def print_designation_refund(item)
 end
 
 def designation_refund_columns
-  %i[
+  %w[
     id
     amount_cents
   ]

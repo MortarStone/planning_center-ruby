@@ -9,7 +9,7 @@ def print_refund(item)
 end
 
 def refund_columns
-  %i[
+  %w[
     id
     amount_cents
     refunded_at

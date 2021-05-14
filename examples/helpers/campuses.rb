@@ -9,7 +9,7 @@ def print_campus(item)
 end
 
 def campus_columns
-  %i[
+  %w[
     id
     name
   ]

@@ -12,7 +12,7 @@ RSpec.describe PlanningCenter::Endpoints::Refunds do
 
     it 'returns a refund object' do
       expect(@refund).to be_a(Hash)
-      expect(@refund[:data][:id]).to eq('27505')
+      expect(@refund['data']['id']).to eq('27505')
     end
   end
 end

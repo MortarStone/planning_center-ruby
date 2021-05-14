@@ -9,7 +9,7 @@ def print_fund(item)
 end
 
 def fund_columns
-  %i[
+  %w[
     id
     name
   ]

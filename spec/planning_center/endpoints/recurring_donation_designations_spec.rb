@@ -11,12 +11,12 @@ RSpec.describe PlanningCenter::Endpoints::RecurringDonationDesignations do
     end
 
     it 'returns an array' do
-      expect(@recurring_donation_designations[:data]).to be_an(Array)
+      expect(@recurring_donation_designations['data']).to be_an(Array)
     end
 
     it 'returns recurring_donation_designations objects' do
-      expect(@recurring_donation_designations[:data].first).to be_a(Hash)
-      expect(@recurring_donation_designations[:data].first[:id]).to_not be_nil
+      expect(@recurring_donation_designations['data'].first).to be_a(Hash)
+      expect(@recurring_donation_designations['data'].first['id']).to_not be_nil
     end
   end
 
@@ -27,7 +27,7 @@ RSpec.describe PlanningCenter::Endpoints::RecurringDonationDesignations do
 
     it 'returns a recurring_donation_designation object' do
       expect(@recurring_donation_designation).to be_a(Hash)
-      expect(@recurring_donation_designation[:data][:id]).to eq('383099')
+      expect(@recurring_donation_designation['data']['id']).to eq('383099')
     end
   end
 end

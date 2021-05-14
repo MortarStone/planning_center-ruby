@@ -9,7 +9,7 @@ def print_recurring_donation_designation(item)
 end
 
 def recurring_donation_designation_columns
-  %i[
+  %w[
     id
     amount_cents
   ]

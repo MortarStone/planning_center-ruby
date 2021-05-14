@@ -9,7 +9,7 @@ def print_donation(item)
 end
 
 def donation_columns
-  %i[
+  %w[
     id
     amount_cents
     received_at

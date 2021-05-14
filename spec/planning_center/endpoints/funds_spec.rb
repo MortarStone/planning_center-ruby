@@ -11,16 +11,16 @@ RSpec.describe PlanningCenter::Endpoints::Funds do
     end
 
     it 'returns an array' do
-      expect(@funds[:data]).to be_an(Array)
+      expect(@funds['data']).to be_an(Array)
     end
 
     it 'returns the correct number of objects' do
-      expect(@funds[:data].count).to eq 25
+      expect(@funds['data'].count).to eq 25
     end
 
     it 'returns funds objects' do
-      expect(@funds[:data].first).to be_a(Hash)
-      expect(@funds[:data].first[:id]).to_not be_nil
+      expect(@funds['data'].first).to be_a(Hash)
+      expect(@funds['data'].first['id']).to_not be_nil
     end
   end
 
@@ -31,7 +31,7 @@ RSpec.describe PlanningCenter::Endpoints::Funds do
 
     it 'returns a fund object' do
       expect(@fund).to be_a(Hash)
-      expect(@fund[:data][:id]).to eq('131737')
+      expect(@fund['data']['id']).to eq('131737')
     end
   end
 end

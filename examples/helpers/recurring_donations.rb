@@ -9,7 +9,7 @@ def print_recurring_donation(item)
 end
 
 def recurring_donation_columns
-  %i[
+  %w[
     id
     amount_cents
     status

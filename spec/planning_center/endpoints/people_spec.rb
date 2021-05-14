@@ -11,16 +11,16 @@ RSpec.describe PlanningCenter::Endpoints::People do
     end
 
     it 'returns an array' do
-      expect(@people[:data]).to be_an(Array)
+      expect(@people['data']).to be_an(Array)
     end
 
     it 'returns the correct number of objects' do
-      expect(@people[:data].count).to eq 25
+      expect(@people['data'].count).to eq 25
     end
 
     it 'returns people objects' do
-      expect(@people[:data].first).to be_a(Hash)
-      expect(@people[:data].first[:id]).to_not be_nil
+      expect(@people['data'].first).to be_a(Hash)
+      expect(@people['data'].first['id']).to_not be_nil
     end
   end
 
@@ -41,15 +41,15 @@ RSpec.describe PlanningCenter::Endpoints::People do
     end
 
     it 'returns an array' do
-      expect(@people[:data]).to be_an(Array)
+      expect(@people['data']).to be_an(Array)
     end
 
     it 'returns the correct number of objects' do
-      expect(@people[:data].count).to eq 25
+      expect(@people['data'].count).to eq 25
     end
 
     it 'returns included objects' do
-      included = @people[:included].map { |i| i[:type] }.uniq
+      included = @people['included'].map { |i| i['type'] }.uniq
       expect(included).to include('Household')
       expect(included).to include('MaritalStatus')
       expect(included).to include('Email')
@@ -66,7 +66,7 @@ RSpec.describe PlanningCenter::Endpoints::People do
 
     it 'returns a person object' do
       expect(@person).to be_a(Hash)
-      expect(@person[:data][:id]).to eq('2669139')
+      expect(@person['data']['id']).to eq('2669139')
     end
   end
 end

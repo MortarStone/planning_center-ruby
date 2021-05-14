@@ -11,12 +11,12 @@ RSpec.describe PlanningCenter::Endpoints::Campuses do
     end
 
     it 'returns an array' do
-      expect(@campuses[:data]).to be_an(Array)
+      expect(@campuses['data']).to be_an(Array)
     end
 
     it 'returns campuses objects' do
-      expect(@campuses[:data].first).to be_a(Hash)
-      expect(@campuses[:data].first[:id]).to_not be_nil
+      expect(@campuses['data'].first).to be_a(Hash)
+      expect(@campuses['data'].first['id']).to_not be_nil
     end
   end
 
@@ -27,7 +27,7 @@ RSpec.describe PlanningCenter::Endpoints::Campuses do
 
     it 'returns a campus object' do
       expect(@campus).to be_a(Hash)
-      expect(@campus[:data][:id]).to eq('44710')
+      expect(@campus['data']['id']).to eq('44710')
     end
   end
 end
