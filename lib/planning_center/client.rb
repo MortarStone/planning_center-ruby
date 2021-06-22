@@ -16,6 +16,8 @@ module PlanningCenter
     include PlanningCenter::Endpoints::NameSuffixes
     include PlanningCenter::Endpoints::People
     include PlanningCenter::Endpoints::PhoneNumbers
+    include PlanningCenter::Endpoints::PledgeCampaigns
+    include PlanningCenter::Endpoints::Pledges
     include PlanningCenter::Endpoints::RecurringDonationDesignations
     include PlanningCenter::Endpoints::RecurringDonations
     include PlanningCenter::Endpoints::Refunds
