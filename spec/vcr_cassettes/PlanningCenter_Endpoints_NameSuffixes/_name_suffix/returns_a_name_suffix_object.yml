@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.planningcenteronline.com/people/v2/name_suffixes/296925?offset=0&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 6381c30e17532314db41bcf1499bb88a17551470abe22671b5fc839e0af53269
+      User-Agent:
+      - Faraday v1.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 27 May 2021 19:09:19 GMT
+      content-type:
+      - application/vnd.api+json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - no-referrer-when-downgrade
+      x-pco-api-auth-method:
+      - OAuth2
+      x-pco-api-request-rate-count:
+      - '4'
+      x-pco-api-request-rate-limit:
+      - '100'
+      x-pco-api-request-rate-period:
+      - '20'
+      x-pco-api-processor:
+      - ENG_3.9.3
+      access-control-allow-credentials:
+      - 'true'
+      access-control-expose-headers:
+      - ETag, Link, X-PCO-API-Auth-Method, X-PCO-API-Request-Rate-Count, X-PCO-API-Request-Rate-Limit,
+        X-PCO-API-Request-Rate-Period, Retry-After
+      access-control-allow-headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since, Origin, X-Requested-With, X-CSRF-Token, X-PCO-API-Version,
+        X-PCO-API-Log-Level, X-PCO-API-Tracer-Class, X-PCO-API-Tracer-Secret
+      access-control-allow-methods:
+      - GET, POST, PATCH, PUT, DELETE, OPTIONS
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept, Accept-Encoding, Origin
+      x-pco-api-processed-as-version:
+      - '2020-07-22'
+      etag:
+      - W/"621dd5cd1cc7065df197f43dcbc852fd"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 15fa523f-e4cc-48f1-af84-aed542cb0a07
+      x-runtime:
+      - '0.055699'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"NameSuffix","id":"296925","attributes":{"value":"Jr."},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296925"}},"included":[],"meta":{"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Thu, 27 May 2021 19:09:19 GMT
+recorded_with: VCR 6.0.0

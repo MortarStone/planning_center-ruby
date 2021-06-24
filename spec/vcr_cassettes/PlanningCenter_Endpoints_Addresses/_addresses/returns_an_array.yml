@@ -1,0 +1,110 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.planningcenteronline.com/people/v2/addresses?offset=0&order=created_at&per_page=25
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 6381c30e17532314db41bcf1499bb88a17551470abe22671b5fc839e0af53269
+      User-Agent:
+      - Faraday v1.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 27 May 2021 18:58:20 GMT
+      content-type:
+      - application/vnd.api+json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - no-referrer-when-downgrade
+      x-pco-api-auth-method:
+      - OAuth2
+      x-pco-api-request-rate-count:
+      - '1'
+      x-pco-api-request-rate-limit:
+      - '100'
+      x-pco-api-request-rate-period:
+      - '20'
+      x-pco-api-processor:
+      - ENG_3.9.3
+      access-control-allow-credentials:
+      - 'true'
+      access-control-expose-headers:
+      - ETag, Link, X-PCO-API-Auth-Method, X-PCO-API-Request-Rate-Count, X-PCO-API-Request-Rate-Limit,
+        X-PCO-API-Request-Rate-Period, Retry-After
+      access-control-allow-headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since, Origin, X-Requested-With, X-CSRF-Token, X-PCO-API-Version,
+        X-PCO-API-Log-Level, X-PCO-API-Tracer-Class, X-PCO-API-Tracer-Secret
+      access-control-allow-methods:
+      - GET, POST, PATCH, PUT, DELETE, OPTIONS
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept, Accept-Encoding, Origin
+      x-pco-api-processed-as-version:
+      - '2020-07-22'
+      etag:
+      - W/"f6401e8d8440410975291d590cb6f586"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 99dbb4ab-e10e-451a-b349-541cb826ad78
+      x-runtime:
+      - '0.185755'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses?offset=0&order=created_at&per_page=25","next":"https://api.planningcenteronline.com/people/v2/addresses?offset=25&order=created_at&per_page=25"},"data":[{"type":"Address","id":"604555","attributes":{"city":"Austin","created_at":"2012-09-17T23:28:48Z","location":"Home","primary":true,"state":"TX","street":"1601
+        Broadmoor","updated_at":"2012-09-24T23:14:40Z","zip":"78723"},"relationships":{"person":{"data":{"type":"Person","id":"2482515"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/604555"}},{"type":"Address","id":"613943","attributes":{"city":"Austin","created_at":"2012-09-27T21:59:09Z","location":"Home","primary":true,"state":"TX","street":"6911
+        Dubuque Ln.","updated_at":"2018-09-18T02:02:12Z","zip":"78723"},"relationships":{"person":{"data":{"type":"Person","id":"2446996"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/613943"}},{"type":"Address","id":"613945","attributes":{"city":"Austin","created_at":"2012-09-27T22:03:23Z","location":"Home","primary":true,"state":"TX","street":"8421
+        Linda Michelle Ln","updated_at":"2020-08-04T03:26:34Z","zip":"78724"},"relationships":{"person":{"data":{"type":"Person","id":"2409185"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/613945"}},{"type":"Address","id":"614635","attributes":{"city":"Austin,
+        ","created_at":"2012-09-29T23:09:19Z","location":"Home","primary":true,"state":"TX","street":"8210
+        Bent Tree Road #113","updated_at":"2012-09-29T23:09:19Z","zip":"78759"},"relationships":{"person":{"data":{"type":"Person","id":"2482317"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/614635"}},{"type":"Address","id":"870828","attributes":{"city":"Austin","created_at":"2013-11-09T19:55:37Z","location":"Home","primary":true,"state":"TX","street":"4421
+        Bellvue Avenue, Unit A","updated_at":"2019-04-03T19:49:01Z","zip":"78756"},"relationships":{"person":{"data":{"type":"Person","id":"4330052"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/870828"}},{"type":"Address","id":"870830","attributes":{"city":"Austin","created_at":"2013-11-09T19:57:23Z","location":"Home","primary":false,"state":"TX","street":"4421
+        Bellvue Ave, Unit A","updated_at":"2018-10-10T01:08:00Z","zip":"78756"},"relationships":{"person":{"data":{"type":"Person","id":"75850157"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/870830"}},{"type":"Address","id":"870832","attributes":{"city":"Houston","created_at":"2013-11-09T19:59:09Z","location":"Home","primary":true,"state":"TX","street":"6011
+        Benning Dr","updated_at":"2019-09-08T20:51:43Z","zip":"77096"},"relationships":{"person":{"data":{"type":"Person","id":"4330056"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/870832"}},{"type":"Address","id":"3035846","attributes":{"city":"Austin","created_at":"2015-05-05T01:44:08Z","location":"Home","primary":true,"state":"Tx","street":"11900
+        Hobby Horse Court Apt. 228","updated_at":"2015-05-05T01:44:08Z","zip":"78758"},"relationships":{"person":{"data":{"type":"Person","id":"7233901"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/3035846"}},{"type":"Address","id":"4999743","attributes":{"city":"Austin","created_at":"2015-09-30T02:36:30Z","location":"Home","primary":true,"state":"TX","street":"1108
+        Justin Lane","updated_at":"2017-08-28T04:02:09Z","zip":"78757"},"relationships":{"person":{"data":{"type":"Person","id":"11206327"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/4999743"}},{"type":"Address","id":"5573695","attributes":{"city":"Austin","created_at":"2015-11-10T23:21:41Z","location":"Home","primary":true,"state":"TX","street":"8010
+        N Lake Dr","updated_at":"2015-11-10T23:21:41Z","zip":"78724"},"relationships":{"person":{"data":{"type":"Person","id":"9254501"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/5573695"}},{"type":"Address","id":"20175535","attributes":{"city":"Austin","created_at":"2017-05-22T22:10:12Z","location":"Home","primary":true,"state":"Texas","street":"7631
+        W Hwy 290 \nApt 415","updated_at":"2017-05-22T22:10:12Z","zip":"78736"},"relationships":{"person":{"data":{"type":"Person","id":"5945873"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/20175535"}},{"type":"Address","id":"23221951","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:22Z","location":"Home","primary":true,"state":"TX","street":"1305
+        San Bernard St","updated_at":"2017-09-03T20:18:22Z","zip":"78702"},"relationships":{"person":{"data":{"type":"Person","id":"29315727"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221951"}},{"type":"Address","id":"23221952","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:22Z","location":"Home","primary":true,"state":"TX","street":"1305
+        San Bernard St","updated_at":"2017-09-03T20:18:22Z","zip":"78702"},"relationships":{"person":{"data":{"type":"Person","id":"31069899"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221952"}},{"type":"Address","id":"23221953","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:22Z","location":"Home","primary":true,"state":"TX","street":"2202
+        New York Ave","updated_at":"2017-09-03T20:18:22Z","zip":"78702-1730"},"relationships":{"person":{"data":{"type":"Person","id":"29315730"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221953"}},{"type":"Address","id":"23221954","attributes":{"city":"Kyle","created_at":"2017-09-03T20:18:22Z","location":"Home","primary":true,"state":"TX","street":"1573
+        Treeta Trl","updated_at":"2017-09-03T20:18:22Z","zip":"78640"},"relationships":{"person":{"data":{"type":"Person","id":"29315731"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221954"}},{"type":"Address","id":"23221956","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:23Z","location":"Home","primary":true,"state":"TX","street":"2102
+        E 13th St Unit B","updated_at":"2017-09-03T20:18:23Z","zip":"78702-1710"},"relationships":{"person":{"data":{"type":"Person","id":"29315737"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221956"}},{"type":"Address","id":"23221957","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:23Z","location":"Home","primary":true,"state":"TX","street":"2102
+        E 13th St Unit B","updated_at":"2017-09-03T20:18:23Z","zip":"78702-1710"},"relationships":{"person":{"data":{"type":"Person","id":"29315738"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221957"}},{"type":"Address","id":"23221958","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:23Z","location":"Home","primary":true,"state":"TX","street":"2102
+        E 13th St Unit B","updated_at":"2017-09-03T20:18:23Z","zip":"78702-1710"},"relationships":{"person":{"data":{"type":"Person","id":"28433012"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221958"}},{"type":"Address","id":"23221963","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:24Z","location":"Home","primary":true,"state":"TX","street":"1108
+        Justin Ln","updated_at":"2017-09-03T20:18:24Z","zip":"78757-2630"},"relationships":{"person":{"data":{"type":"Person","id":"28432839"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221963"}},{"type":"Address","id":"23221964","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:24Z","location":"Home","primary":true,"state":"TX","street":"7012
+        Miranda Dr","updated_at":"2017-09-03T20:18:24Z","zip":"78752-3122"},"relationships":{"person":{"data":{"type":"Person","id":"29315740"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221964"}},{"type":"Address","id":"23221965","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:24Z","location":"Home","primary":true,"state":"TX","street":"7012
+        Miranda Dr","updated_at":"2017-09-03T20:18:24Z","zip":"78752-3122"},"relationships":{"person":{"data":{"type":"Person","id":"29315741"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221965"}},{"type":"Address","id":"23221966","attributes":{"city":"Round
+        Rock","created_at":"2017-09-03T20:18:25Z","location":"Home","primary":true,"state":"TX","street":"8203
+        Longdraw Dr","updated_at":"2017-09-03T20:18:25Z","zip":"78681"},"relationships":{"person":{"data":{"type":"Person","id":"29298648"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221966"}},{"type":"Address","id":"23221967","attributes":{"city":"Round
+        Rock","created_at":"2017-09-03T20:18:25Z","location":"Home","primary":true,"state":"TX","street":"8203
+        Longdraw Dr","updated_at":"2017-09-03T20:18:25Z","zip":"78681"},"relationships":{"person":{"data":{"type":"Person","id":"29298484"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221967"}},{"type":"Address","id":"23221969","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:25Z","location":"Home","primary":true,"state":"TX","street":"726
+        Shade Tree Drive","updated_at":"2019-02-07T05:37:40Z","zip":"78748"},"relationships":{"person":{"data":{"type":"Person","id":"29315748"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221969"}},{"type":"Address","id":"23221972","attributes":{"city":"Austin","created_at":"2017-09-03T20:18:25Z","location":"Home","primary":true,"state":"TX","street":"6807
+        De Paul Cv","updated_at":"2017-09-03T20:18:25Z","zip":"78723-2223"},"relationships":{"person":{"data":{"type":"Person","id":"29315751"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/23221972"}}],"included":[],"meta":{"total_count":2886,"count":25,"next":{"offset":25},"can_order_by":["city","state","zip","street","location","primary","created_at","updated_at"],"can_query_by":["city","state","zip","street","location","primary"],"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Thu, 27 May 2021 18:58:20 GMT
+recorded_with: VCR 6.0.0

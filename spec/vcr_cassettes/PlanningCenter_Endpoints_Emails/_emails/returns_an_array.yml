@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.planningcenteronline.com/people/v2/emails?offset=0&order=created_at&per_page=25
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 6381c30e17532314db41bcf1499bb88a17551470abe22671b5fc839e0af53269
+      User-Agent:
+      - Faraday v1.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 27 May 2021 18:57:50 GMT
+      content-type:
+      - application/vnd.api+json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - no-referrer-when-downgrade
+      x-pco-api-auth-method:
+      - OAuth2
+      x-pco-api-request-rate-count:
+      - '1'
+      x-pco-api-request-rate-limit:
+      - '100'
+      x-pco-api-request-rate-period:
+      - '20'
+      x-pco-api-processor:
+      - ENG_3.9.3
+      access-control-allow-credentials:
+      - 'true'
+      access-control-expose-headers:
+      - ETag, Link, X-PCO-API-Auth-Method, X-PCO-API-Request-Rate-Count, X-PCO-API-Request-Rate-Limit,
+        X-PCO-API-Request-Rate-Period, Retry-After
+      access-control-allow-headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since, Origin, X-Requested-With, X-CSRF-Token, X-PCO-API-Version,
+        X-PCO-API-Log-Level, X-PCO-API-Tracer-Class, X-PCO-API-Tracer-Secret
+      access-control-allow-methods:
+      - GET, POST, PATCH, PUT, DELETE, OPTIONS
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept, Accept-Encoding, Origin
+      x-pco-api-processed-as-version:
+      - '2020-07-22'
+      etag:
+      - W/"0e2c860ae86da58099e5c8e0f64a0c53"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - c0b09977-f66e-441f-a608-586f07b2eb4f
+      x-runtime:
+      - '0.038697'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"links":{"self":"https://api.planningcenteronline.com/people/v2/emails?offset=0&order=created_at&per_page=25","next":"https://api.planningcenteronline.com/people/v2/emails?offset=25&order=created_at&per_page=25"},"data":[{"type":"Email","id":"2479635","attributes":{"address":"erlt2000@gmail.com","blocked":false,"created_at":"2012-09-08T01:24:05Z","location":"Home","primary":true,"updated_at":"2012-09-08T01:24:05Z"},"relationships":{"person":{"data":{"type":"Person","id":"2409185"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/2479635"}},{"type":"Email","id":"2515990","attributes":{"address":"tmayo@thewellaustin.com","blocked":false,"created_at":"2012-09-11T23:44:13Z","location":"Home","primary":true,"updated_at":"2012-09-11T23:44:13Z"},"relationships":{"person":{"data":{"type":"Person","id":"2446996"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/2515990"}},{"type":"Email","id":"2550595","attributes":{"address":"juli@thewellaustin.com","blocked":false,"created_at":"2012-09-17T21:55:42Z","location":"Work","primary":true,"updated_at":"2020-07-17T21:30:56Z"},"relationships":{"person":{"data":{"type":"Person","id":"2482313"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/2550595"}},{"type":"Email","id":"2550599","attributes":{"address":"laurenridley23@gmail.com","blocked":false,"created_at":"2012-09-17T21:56:17Z","location":"Home","primary":true,"updated_at":"2012-09-17T21:56:17Z"},"relationships":{"person":{"data":{"type":"Person","id":"2482317"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/2550599"}},{"type":"Email","id":"2550693","attributes":{"address":"atxboy512@gmail.com","blocked":false,"created_at":"2012-09-17T22:15:45Z","location":"Home","primary":true,"updated_at":"2012-09-17T22:15:45Z"},"relationships":{"person":{"data":{"type":"Person","id":"2482401"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/2550693"}},{"type":"Email","id":"2550811","attributes":{"address":"stimsondave@yahoo.com","blocked":false,"created_at":"2012-09-17T22:44:39Z","location":"Home","primary":true,"updated_at":"2012-09-17T22:44:39Z"},"relationships":{"person":{"data":{"type":"Person","id":"2482515"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/2550811"}},{"type":"Email","id":"2551769","attributes":{"address":"ridlejs@gmail.com","blocked":false,"created_at":"2012-09-18T02:23:58Z","location":"Home","primary":true,"updated_at":"2012-09-18T02:23:58Z"},"relationships":{"person":{"data":{"type":"Person","id":"2483433"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/2551769"}},{"type":"Email","id":"3830699","attributes":{"address":"kamigrace@gmail.com","blocked":false,"created_at":"2013-07-23T21:34:06Z","location":"Home","primary":false,"updated_at":"2014-05-02T22:51:27Z"},"relationships":{"person":{"data":{"type":"Person","id":"3749655"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/3830699"}},{"type":"Email","id":"4216971","attributes":{"address":"johndluck@gmail.com","blocked":false,"created_at":"2013-09-29T19:49:22Z","location":"Home","primary":true,"updated_at":"2013-09-29T19:49:22Z"},"relationships":{"person":{"data":{"type":"Person","id":"4129301"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/4216971"}},{"type":"Email","id":"4423388","attributes":{"address":"kowabara@gmail.com","blocked":false,"created_at":"2013-11-09T19:56:23Z","location":"Home","primary":false,"updated_at":"2013-11-09T19:56:23Z"},"relationships":{"person":{"data":{"type":"Person","id":"75850157"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/4423388"}},{"type":"Email","id":"4423390","attributes":{"address":"maryeluck@gmail.com","blocked":false,"created_at":"2013-11-09T19:58:20Z","location":"Home","primary":true,"updated_at":"2013-11-09T19:58:20Z"},"relationships":{"person":{"data":{"type":"Person","id":"4330056"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/4423390"}},{"type":"Email","id":"4509573","attributes":{"address":"emmy.robbins444@gmail.com","blocked":false,"created_at":"2013-12-06T03:50:32Z","location":"Home","primary":true,"updated_at":"2013-12-06T03:50:32Z"},"relationships":{"person":{"data":{"type":"Person","id":"4414531"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/4509573"}},{"type":"Email","id":"4582379","attributes":{"address":"kiersten.soderman@gmail.com","blocked":false,"created_at":"2014-01-05T13:10:11Z","location":"Home","primary":true,"updated_at":"2014-01-05T13:10:11Z"},"relationships":{"person":{"data":{"type":"Person","id":"4486455"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/4582379"}},{"type":"Email","id":"4582381","attributes":{"address":"gsoderman3@gmail.com","blocked":false,"created_at":"2014-01-05T13:10:58Z","location":"Home","primary":true,"updated_at":"2014-01-05T13:10:58Z"},"relationships":{"person":{"data":{"type":"Person","id":"4486457"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/4582381"}},{"type":"Email","id":"5097573","attributes":{"address":"alishawanamaker@gmail.com","blocked":false,"created_at":"2014-05-01T19:21:15Z","location":"Home","primary":true,"updated_at":"2014-05-01T19:21:15Z"},"relationships":{"person":{"data":{"type":"Person","id":"5003273"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/5097573"}},{"type":"Email","id":"5795991","attributes":{"address":"carlos.972@hotmail.com","blocked":false,"created_at":"2014-09-10T19:13:29Z","location":"Home","primary":true,"updated_at":"2014-09-12T00:51:40Z"},"relationships":{"person":{"data":{"type":"Person","id":"5945873"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/5795991"}},{"type":"Email","id":"6003559","attributes":{"address":"stephen.renard@gmail.com","blocked":false,"created_at":"2014-10-06T22:08:37Z","location":"Home","primary":true,"updated_at":"2014-10-06T22:08:37Z"},"relationships":{"person":{"data":{"type":"Person","id":"6223047"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/6003559"}},{"type":"Email","id":"6137597","attributes":{"address":"travisearl14@gmail.com","blocked":false,"created_at":"2014-10-24T13:51:15Z","location":"Home","primary":true,"updated_at":"2014-10-24T13:51:15Z"},"relationships":{"person":{"data":{"type":"Person","id":"6452687"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/6137597"}},{"type":"Email","id":"6137603","attributes":{"address":"colinlindley@gmail.com","blocked":false,"created_at":"2014-10-24T13:52:04Z","location":"Home","primary":true,"updated_at":"2014-10-24T13:52:04Z"},"relationships":{"person":{"data":{"type":"Person","id":"6452693"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/6137603"}},{"type":"Email","id":"6238689","attributes":{"address":"krystofer.henry@gmail.com","blocked":false,"created_at":"2014-11-11T21:25:18Z","location":"Home","primary":true,"updated_at":"2014-11-11T21:25:18Z"},"relationships":{"person":{"data":{"type":"Person","id":"6664813"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/6238689"}},{"type":"Email","id":"6409219","attributes":{"address":"mandimadams@gmail.com","blocked":false,"created_at":"2014-12-17T19:42:12Z","location":"Home","primary":true,"updated_at":"2014-12-17T19:42:12Z"},"relationships":{"person":{"data":{"type":"Person","id":"7124573"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/6409219"}},{"type":"Email","id":"6481973","attributes":{"address":"jporter252@gmail.com","blocked":false,"created_at":"2015-01-08T01:38:29Z","location":"Home","primary":true,"updated_at":"2015-01-08T01:38:29Z"},"relationships":{"person":{"data":{"type":"Person","id":"7233901"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/6481973"}},{"type":"Email","id":"6803895","attributes":{"address":"ags00d@gmail.com","blocked":false,"created_at":"2015-02-24T22:40:57Z","location":"Home","primary":true,"updated_at":"2015-02-24T22:40:57Z"},"relationships":{"person":{"data":{"type":"Person","id":"7706023"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/6803895"}},{"type":"Email","id":"6893503","attributes":{"address":"joshua6canter@gmail.com","blocked":false,"created_at":"2015-03-01T22:25:05Z","location":"Home","primary":true,"updated_at":"2015-03-01T22:25:05Z"},"relationships":{"person":{"data":{"type":"Person","id":"7786571"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/6893503"}},{"type":"Email","id":"6893561","attributes":{"address":"lindy_watkins@yahoo.com","blocked":false,"created_at":"2015-03-01T22:31:38Z","location":"Home","primary":true,"updated_at":"2015-05-09T12:47:28Z"},"relationships":{"person":{"data":{"type":"Person","id":"7786657"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/emails/6893561"}}],"included":[],"meta":{"total_count":3318,"count":25,"next":{"offset":25},"can_order_by":["address","location","primary","created_at","updated_at"],"can_query_by":["address","location","primary","created_at","updated_at","blocked"],"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Thu, 27 May 2021 18:57:50 GMT
+recorded_with: VCR 6.0.0
