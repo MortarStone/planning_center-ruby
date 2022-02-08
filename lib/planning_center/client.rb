@@ -34,7 +34,7 @@ module PlanningCenter
     def connection
       @connection ||=
         Faraday.new(url, request: { timeout: 300_000 }) do |conn|
-          conn.authorization :Bearer, @access_token
+          conn.request :authorization, 'Bearer', @access_token
         end
     end
 
