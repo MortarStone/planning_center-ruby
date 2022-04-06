@@ -26,6 +26,9 @@ module PlanningCenter
           v = v.join('%2C')
         elsif is_a?(Date)
           v = v.strftime('%Y-%m-%d')
+        elsif k == :where
+          v.each { |k, v| arr << "where[#{k}]=#{v}" }
+          next
         end
         arr << "#{k}=#{v}"
       end

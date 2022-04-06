@@ -44,8 +44,12 @@ module PlanningCenter
     end
 
     def format_response
-      results = JSON.parse(response.body)
-      results['headers'] = response.headers
+      results = response.body
+
+      if !results.blank?
+        results['headers'] = response.headers
+      end
+
       results
     end
   end
