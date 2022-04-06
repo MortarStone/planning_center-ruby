@@ -29,22 +29,41 @@ module PlanningCenter
       @url = 'https://api.planningcenteronline.com'
     end
 
-    private
-
     def connection
       @connection ||=
         Faraday.new(url, request: { timeout: 300_000 }) do |conn|
           conn.request :authorization, 'Bearer', @access_token
+          conn.request :json
+          conn.response :json
         end
     end
 
     def get(path, params = {})
       path = RequestFormatter.new(path: path, params: params).call
-      # puts "path = #{path}"
-      response = connection.get(path) do |req|
+
+      request(path: path)
+    end
+
+    def post(path, body = {})
+      request(method: :post, path: path, body: body)
+    end
+
+    def patch(path, body = {})
+      request(method: :patch, path: path, body: body)
+    end
+
+    def delete(path)
+      request(method: :delete, path: path)
+    end
+
+    def request(method: :get, path:, body: {})
+      res = connection.public_send(method) do |req|
+        req.url "#{url}/#{path}"
         req.options.timeout = 300 # 5 minutes
+        req.body = body.to_json
       end
-      ResponseHandler.new(response: response).call
+
+      ResponseHandler.new(response: res).call
     end
   end
 end
