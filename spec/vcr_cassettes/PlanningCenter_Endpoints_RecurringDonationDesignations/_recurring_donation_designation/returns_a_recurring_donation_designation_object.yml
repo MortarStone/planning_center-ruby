@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/giving/v2/recurring_donations/358916/designations/383099?offset=0&per_page=100
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 26fcff069aa11d2f40ec48876948fce30e322e027a25706ec9e114ee874101c8
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 14 May 2021 14:15:28 GMT
+      - Fri, 08 Apr 2022 18:49:14 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -41,13 +43,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '24'
+      - '23'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.2.1
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -62,7 +64,7 @@ http_interactions:
       access-control-allow-origin:
       - "*"
       vary:
-      - Accept, Accept-Encoding, Origin
+      - Accept
       x-pco-api-processed-as-version:
       - '2019-10-18'
       etag:
@@ -70,13 +72,13 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - f3cc6b72-aa09-4453-9b70-fde3b869c34d
+      - f516d23e-7461-4958-a026-0e001164d792
       x-runtime:
-      - '0.030534'
+      - '0.038648'
       strict-transport-security:
-      - max-age=31536000; includeSubDomains
+      - max-age=63072000; includeSubDomains
     body:
       encoding: UTF-8
       string: '{"data":{"type":"RecurringDonationDesignation","id":"383099","attributes":{"amount_cents":2075,"amount_currency":"USD"},"links":{"fund":"https://api.planningcenteronline.com/giving/v2/funds/118284","self":"https://api.planningcenteronline.com/giving/v2/recurring_donations/358916/designations/383099"}},"included":[],"meta":{"can_include":["fund"],"parent":{"id":"358916","type":"RecurringDonation"}}}'
-  recorded_at: Fri, 14 May 2021 14:15:28 GMT
+  recorded_at: Fri, 08 Apr 2022 18:49:14 GMT
 recorded_with: VCR 6.0.0

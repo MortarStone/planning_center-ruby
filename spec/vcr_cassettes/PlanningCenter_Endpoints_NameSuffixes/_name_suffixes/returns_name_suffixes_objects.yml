@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/people/v2/name_suffixes?offset=0&per_page=25
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 6381c30e17532314db41bcf1499bb88a17551470abe22671b5fc839e0af53269
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 27 May 2021 19:09:19 GMT
+      - Fri, 08 Apr 2022 18:49:03 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -41,13 +43,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '3'
+      - '9'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.3
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -64,19 +66,19 @@ http_interactions:
       vary:
       - Accept, Accept-Encoding, Origin
       x-pco-api-processed-as-version:
-      - '2020-07-22'
+      - '2022-01-28'
       etag:
-      - W/"458b31925482132ac51511944b170370"
+      - W/"982ea234ccc03e143635d21a2e41481c"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 44a2d0ca-144c-465d-8b02-7906c7194d46
+      - 36068aad-8a8e-45f2-8bc7-fe3e3bc5116d
       x-runtime:
-      - '0.032252'
+      - '0.039461'
       strict-transport-security:
       - max-age=31536000; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes?offset=0&per_page=25"},"data":[{"type":"NameSuffix","id":"296925","attributes":{"value":"Jr."},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296925"}},{"type":"NameSuffix","id":"296927","attributes":{"value":"Sr."},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296927"}},{"type":"NameSuffix","id":"296929","attributes":{"value":"Ph.D."},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296929"}},{"type":"NameSuffix","id":"296931","attributes":{"value":"II"},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296931"}},{"type":"NameSuffix","id":"296933","attributes":{"value":"III"},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296933"}}],"included":[],"meta":{"total_count":5,"count":5,"can_order_by":["value"],"can_query_by":["value"],"parent":{"id":"86977","type":"Organization"}}}'
-  recorded_at: Thu, 27 May 2021 19:09:19 GMT
+      string: '{"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes?&offset=0&per_page=25"},"data":[{"type":"NameSuffix","id":"296925","attributes":{"value":"Jr."},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296925"}},{"type":"NameSuffix","id":"296927","attributes":{"value":"Sr."},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296927"}},{"type":"NameSuffix","id":"296929","attributes":{"value":"Ph.D."},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296929"}},{"type":"NameSuffix","id":"296931","attributes":{"value":"II"},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296931"}},{"type":"NameSuffix","id":"296933","attributes":{"value":"III"},"links":{"self":"https://api.planningcenteronline.com/people/v2/name_suffixes/296933"}}],"included":[],"meta":{"total_count":5,"count":5,"can_order_by":["value"],"can_query_by":["value"],"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Fri, 08 Apr 2022 18:49:03 GMT
 recorded_with: VCR 6.0.0

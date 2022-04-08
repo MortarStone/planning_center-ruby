@@ -26,12 +26,12 @@ RSpec.describe PlanningCenter::Endpoints::Emails do
 
   describe '#email', :vcr do
     before do
-      @email = client.email(2_479_635)
+      @email = client.email(2_515_990)
     end
 
     it 'returns a email object' do
       expect(@email).to be_a(Hash)
-      expect(@email['data']['id']).to eq('2479635')
+      expect(@email['data']['id']).to eq('2515990')
     end
   end
 end

@@ -2,28 +2,30 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.planningcenteronline.com/people/v2/emails/2479635?offset=0&per_page=100
+    uri: https://api.planningcenteronline.com/people/v2/emails/2515990?offset=0&per_page=100
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 6381c30e17532314db41bcf1499bb88a17551470abe22671b5fc839e0af53269
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 27 May 2021 18:57:50 GMT
+      - Fri, 08 Apr 2022 18:59:00 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -47,7 +49,7 @@ http_interactions:
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.3
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -64,19 +66,19 @@ http_interactions:
       vary:
       - Accept, Accept-Encoding, Origin
       x-pco-api-processed-as-version:
-      - '2020-07-22'
+      - '2022-01-28'
       etag:
-      - W/"26b86ea1a28f37d5fae6840fe834efd8"
+      - W/"d7ac2db7a10b11e2b1539ea614ee27b0"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 81da67e6-8bc8-473e-99ed-c920fb313d78
+      - 73bdeb27-2a5d-42cd-b024-448014a77ef5
       x-runtime:
-      - '0.031987'
+      - '0.044027'
       strict-transport-security:
       - max-age=31536000; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"Email","id":"2479635","attributes":{"address":"erlt2000@gmail.com","blocked":false,"created_at":"2012-09-08T01:24:05Z","location":"Home","primary":true,"updated_at":"2012-09-08T01:24:05Z"},"relationships":{"person":{"data":{"type":"Person","id":"2409185"}}},"links":{"person":"https://api.planningcenteronline.com/people/v2/people/2409185","self":"https://api.planningcenteronline.com/people/v2/emails/2479635"}},"included":[],"meta":{"parent":{"id":"86977","type":"Organization"}}}'
-  recorded_at: Thu, 27 May 2021 18:57:50 GMT
+      string: '{"data":{"type":"Email","id":"2515990","attributes":{"address":"tmayo@thewellaustin.com","blocked":false,"created_at":"2012-09-11T23:44:13Z","location":"Home","primary":true,"updated_at":"2012-09-11T23:44:13Z"},"relationships":{"person":{"data":{"type":"Person","id":"2446996"}}},"links":{"person":"https://api.planningcenteronline.com/people/v2/people/2446996","self":"https://api.planningcenteronline.com/people/v2/emails/2515990"}},"included":[],"meta":{"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Fri, 08 Apr 2022 18:59:00 GMT
 recorded_with: VCR 6.0.0

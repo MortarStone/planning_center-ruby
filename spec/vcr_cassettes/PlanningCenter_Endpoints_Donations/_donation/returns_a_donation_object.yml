@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/giving/v2/donations/46653783?offset=0&per_page=100
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 26fcff069aa11d2f40ec48876948fce30e322e027a25706ec9e114ee874101c8
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 14 May 2021 14:15:23 GMT
+      - Fri, 08 Apr 2022 18:48:46 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -41,13 +43,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '10'
+      - '13'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.2.1
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -62,21 +64,21 @@ http_interactions:
       access-control-allow-origin:
       - "*"
       vary:
-      - Accept, Accept-Encoding, Origin
+      - Accept
       x-pco-api-processed-as-version:
       - '2019-10-18'
       etag:
-      - W/"9a69840cebf8f4382046c2ef2cf44b42"
+      - W/"f6fd40eb9ec448998950cf552c600c62"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 79de621c-2544-4539-83b9-aa2b7ebbaf60
+      - df4d6b74-94ad-41e9-bc7f-2946aa601d5a
       x-runtime:
-      - '0.031578'
+      - '0.040347'
       strict-transport-security:
-      - max-age=31536000; includeSubDomains
+      - max-age=63072000; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"Donation","id":"46653783","attributes":{"amount_cents":10250,"amount_currency":"USD","completed_at":"2020-01-16T19:13:01Z","created_at":"2020-01-16T19:12:58Z","fee_cents":-250,"fee_currency":"USD","payment_brand":"Visa","payment_check_dated_at":null,"payment_check_number":null,"payment_last4":"4429","payment_method":"card","payment_method_sub":"debit","payment_status":"succeeded","received_at":"2020-01-16T19:12:58Z","refundable":false,"refunded":false,"updated_at":"2020-01-21T04:11:32Z"},"relationships":{"batch":{"data":null},"campus":{"data":null},"person":{"data":{"type":"Person","id":"50915071"}},"payment_source":{"data":{"type":"PaymentSource","id":"planning_center"}},"labels":{"data":[]},"recurring_donation":{"data":null}},"links":{"campus":null,"designations":"https://api.planningcenteronline.com/giving/v2/donations/46653783/designations","issue_refund":"https://api.planningcenteronline.com/giving/v2/donations/46653783/issue_refund","labels":"https://api.planningcenteronline.com/giving/v2/donations/46653783/labels","refund":"https://api.planningcenteronline.com/giving/v2/donations/46653783/refund","self":"https://api.planningcenteronline.com/giving/v2/donations/46653783"}},"included":[],"meta":{"can_include":["designations","labels"],"parent":{"id":"86977","type":"Organization"}}}'
-  recorded_at: Fri, 14 May 2021 14:15:23 GMT
+      string: '{"data":{"type":"Donation","id":"46653783","attributes":{"amount_cents":10250,"amount_currency":"USD","completed_at":"2020-01-16T19:13:01Z","created_at":"2020-01-16T19:12:58Z","fee_cents":-250,"fee_currency":"USD","payment_brand":"Visa","payment_check_dated_at":null,"payment_check_number":null,"payment_last4":"4429","payment_method":"card","payment_method_sub":"debit","payment_status":"succeeded","received_at":"2020-01-16T19:12:58Z","refundable":false,"refunded":false,"updated_at":"2020-01-21T04:11:32Z"},"relationships":{"batch":{"data":null},"campus":{"data":null},"person":{"data":{"type":"Person","id":"99469394"}},"payment_source":{"data":{"type":"PaymentSource","id":"planning_center"}},"labels":{"data":[]},"recurring_donation":{"data":null}},"links":{"campus":null,"designations":"https://api.planningcenteronline.com/giving/v2/donations/46653783/designations","issue_refund":"https://api.planningcenteronline.com/giving/v2/donations/46653783/issue_refund","labels":"https://api.planningcenteronline.com/giving/v2/donations/46653783/labels","refund":"https://api.planningcenteronline.com/giving/v2/donations/46653783/refund","self":"https://api.planningcenteronline.com/giving/v2/donations/46653783"}},"included":[],"meta":{"can_include":["designations","labels","refund"],"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Fri, 08 Apr 2022 18:48:45 GMT
 recorded_with: VCR 6.0.0

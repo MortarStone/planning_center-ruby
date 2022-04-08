@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/people/v2/addresses/30896373?offset=0&per_page=100
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 6381c30e17532314db41bcf1499bb88a17551470abe22671b5fc839e0af53269
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 27 May 2021 18:59:02 GMT
+      - Fri, 08 Apr 2022 18:48:39 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -41,13 +43,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '1'
+      - '4'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.3
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -64,20 +66,20 @@ http_interactions:
       vary:
       - Accept, Accept-Encoding, Origin
       x-pco-api-processed-as-version:
-      - '2020-07-22'
+      - '2022-01-28'
       etag:
       - W/"494e6f708550042853b828a7bc4d00a9"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - bc9fa3a5-34e9-4af1-8a37-fd8cfd9eba3a
+      - d957360f-4610-40c3-93ec-3b23686e8946
       x-runtime:
-      - '0.045262'
+      - '0.022535'
       strict-transport-security:
       - max-age=31536000; includeSubDomains
     body:
       encoding: UTF-8
       string: '{"data":{"type":"Address","id":"30896373","attributes":{"city":"Austin","created_at":"2018-05-20T16:22:42Z","location":"Home","primary":true,"state":"TX","street":"5515
         Roosevelt Ave","updated_at":"2018-05-20T16:22:42Z","zip":"78756"},"relationships":{"person":{"data":{"type":"Person","id":"37510891"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/addresses/30896373"}},"included":[],"meta":{"parent":{"id":"86977","type":"Organization"}}}'
-  recorded_at: Thu, 27 May 2021 18:59:02 GMT
+  recorded_at: Fri, 08 Apr 2022 18:48:39 GMT
 recorded_with: VCR 6.0.0

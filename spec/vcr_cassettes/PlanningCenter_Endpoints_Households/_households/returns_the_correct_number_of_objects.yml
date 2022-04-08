@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/people/v2/households?offset=0&order=created_at&per_page=25
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 6381c30e17532314db41bcf1499bb88a17551470abe22671b5fc839e0af53269
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 27 May 2021 19:02:34 GMT
+      - Fri, 08 Apr 2022 18:48:53 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -41,13 +43,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '2'
+      - '23'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.3
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -64,24 +66,24 @@ http_interactions:
       vary:
       - Accept, Accept-Encoding, Origin
       x-pco-api-processed-as-version:
-      - '2020-07-22'
+      - '2022-01-28'
       etag:
-      - W/"03a8a55c2450f90f4ab0991b312f3e86"
+      - W/"63bdc16a3fb54d03209926f592b992b6"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - e7e48a48-dbb0-4661-8dc3-5a1a19248ca8
+      - e5095fc8-221b-4c69-a9f2-6a36bd350719
       x-runtime:
-      - '0.115088'
+      - '0.134423'
       strict-transport-security:
       - max-age=31536000; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"links":{"self":"https://api.planningcenteronline.com/people/v2/households?offset=0&order=created_at&per_page=25","next":"https://api.planningcenteronline.com/people/v2/households?offset=25&order=created_at&per_page=25"},"data":[{"type":"Household","id":"992","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/992-square.png","created_at":"2014-02-19T00:56:01Z","member_count":2,"name":"Deardorff
+      string: '{"links":{"self":"https://api.planningcenteronline.com/people/v2/households?&offset=0&order=created_at&per_page=25","next":"https://api.planningcenteronline.com/people/v2/households?&offset=25&order=created_at&per_page=25"},"data":[{"type":"Household","id":"992","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/992-square.png","created_at":"2014-02-19T00:56:01Z","member_count":2,"name":"Deardorff
         Household","primary_contact_id":"2482855","primary_contact_name":"Jana Deardorff","updated_at":"2020-09-01T23:43:12Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"2482855"}},"people":{"data":[{"type":"Person","id":"2482855"},{"type":"Person","id":"82241871"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/992"}},{"type":"Household","id":"238763","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/763-square.png","created_at":"2014-11-24T03:33:40Z","member_count":4,"name":"Glemboski
-        Household","primary_contact_id":"6744484","primary_contact_name":"Lisa Glemboski","updated_at":"2014-11-24T03:33:40Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"6744484"}},"people":{"data":[{"type":"Person","id":"88955690"},{"type":"Person","id":"6744484"},{"type":"Person","id":"5224115"},{"type":"Person","id":"48660890"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/238763"}},{"type":"Household","id":"2168776","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/776-square.png","created_at":"2016-08-29T21:36:02Z","member_count":2,"name":"Reich
+        Household","primary_contact_id":"6744484","primary_contact_name":"Lisa Glemboski","updated_at":"2014-11-24T03:33:40Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"6744484"}},"people":{"data":[{"type":"Person","id":"88955690"},{"type":"Person","id":"6744484"},{"type":"Person","id":"5224115"},{"type":"Person","id":"48660890"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/238763"}},{"type":"Household","id":"2168776","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/776-square.png","created_at":"2016-08-29T21:36:02Z","member_count":3,"name":"Reich
         Household","primary_contact_id":"6483379","primary_contact_name":"Brandon
-        Reich","updated_at":"2016-08-29T21:36:02Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"6483379"}},"people":{"data":[{"type":"Person","id":"5400507"},{"type":"Person","id":"6483379"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/2168776"}},{"type":"Household","id":"3660237","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/237-square.png","created_at":"2017-08-02T02:45:04Z","member_count":4,"name":"Adams
+        Reich","updated_at":"2016-08-29T21:36:02Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"6483379"}},"people":{"data":[{"type":"Person","id":"5400507"},{"type":"Person","id":"6483379"},{"type":"Person","id":"94457696"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/2168776"}},{"type":"Household","id":"3660237","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/237-square.png","created_at":"2017-08-02T02:45:04Z","member_count":4,"name":"Adams
         Household","primary_contact_id":"6452687","primary_contact_name":"Travis Adams","updated_at":"2017-08-02T02:45:37Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"6452687"}},"people":{"data":[{"type":"Person","id":"7124573"},{"type":"Person","id":"6452687"},{"type":"Person","id":"28432904"},{"type":"Person","id":"28432933"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3660237"}},{"type":"Household","id":"3660276","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/276-square.png","created_at":"2017-08-02T03:47:06Z","member_count":4,"name":"McGriff
         Household","primary_contact_id":"11206343","primary_contact_name":"Miles McGriff","updated_at":"2017-08-02T03:47:06Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"11206343"}},"people":{"data":[{"type":"Person","id":"11206343"},{"type":"Person","id":"11206327"},{"type":"Person","id":"28432839"},{"type":"Person","id":"36002081"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3660276"}},{"type":"Household","id":"3809832","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/832-square.png","created_at":"2017-09-02T17:00:30Z","member_count":6,"name":"Lentz
         Household","primary_contact_id":"29287045","primary_contact_name":"Marina
@@ -90,7 +92,7 @@ http_interactions:
         Household","primary_contact_id":"2482621","primary_contact_name":"Natalie
         Mayo","updated_at":"2017-09-03T15:18:22Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"2482621"}},"people":{"data":[{"type":"Person","id":"2446996"},{"type":"Person","id":"2482621"},{"type":"Person","id":"29302712"},{"type":"Person","id":"29304804"},{"type":"Person","id":"30634483"},{"type":"Person","id":"88840798"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3813260"}},{"type":"Household","id":"3814194","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/194-square.png","created_at":"2017-09-03T16:04:29Z","member_count":4,"name":"Luck
         Household","primary_contact_id":"4129301","primary_contact_name":"John Luck","updated_at":"2018-06-12T04:07:34Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"4129301"}},"people":{"data":[{"type":"Person","id":"4129301"},{"type":"Person","id":"4330056"},{"type":"Person","id":"29306566"},{"type":"Person","id":"37917799"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3814194"}},{"type":"Household","id":"3815948","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/948-square.png","created_at":"2017-09-03T20:26:31Z","member_count":3,"name":"Anderson
-        Household","primary_contact_id":"19996435","primary_contact_name":"Sarah Anderson","updated_at":"2017-09-03T20:26:43Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"19996435"}},"people":{"data":[{"type":"Person","id":"86221777"},{"type":"Person","id":"19996435"},{"type":"Person","id":"29315721"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3815948"}},{"type":"Household","id":"3815950","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/950-square.png","created_at":"2017-09-03T20:27:26Z","member_count":5,"name":"Bergman
+        Household","primary_contact_id":"97642195","primary_contact_name":"Sarah Abraham","updated_at":"2021-09-15T15:07:15Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"97642195"}},"people":{"data":[{"type":"Person","id":"86221777"},{"type":"Person","id":"97642195"},{"type":"Person","id":"29315721"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3815948"}},{"type":"Household","id":"3815950","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/950-square.png","created_at":"2017-09-03T20:27:26Z","member_count":5,"name":"Bergman
         Household","primary_contact_id":"18279598","primary_contact_name":"Laurie
         Bergman","updated_at":"2017-09-03T20:27:33Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"18279598"}},"people":{"data":[{"type":"Person","id":"18279598"},{"type":"Person","id":"82241876"},{"type":"Person","id":"29315722"},{"type":"Person","id":"30635782"},{"type":"Person","id":"62724649"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3815950"}},{"type":"Household","id":"3815953","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/953-square.png","created_at":"2017-09-03T20:29:28Z","member_count":3,"name":"Gomez
         ","primary_contact_id":"25555501","primary_contact_name":"Amelia Gomez","updated_at":"2017-09-03T20:29:50Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"25555501"}},"people":{"data":[{"type":"Person","id":"25555501"},{"type":"Person","id":"31069899"},{"type":"Person","id":"29315727"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3815953"}},{"type":"Household","id":"3815956","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/956-square.png","created_at":"2017-09-03T20:31:34Z","member_count":3,"name":"Jaramillo
@@ -102,7 +104,7 @@ http_interactions:
         Household","primary_contact_id":"7786657","primary_contact_name":"Lindy Watkins","updated_at":"2017-09-03T20:39:57Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"7786657"}},"people":{"data":[{"type":"Person","id":"7786657"},{"type":"Person","id":"7786681"},{"type":"Person","id":"29315751"},{"type":"Person","id":"29315753"},{"type":"Person","id":"29315752"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3815970"}},{"type":"Household","id":"3815989","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/989-square.png","created_at":"2017-09-03T20:53:14Z","member_count":5,"name":"Boyd
         Household","primary_contact_id":"29316074","primary_contact_name":"Adam Boyd","updated_at":"2017-09-03T20:53:14Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"29316074"}},"people":{"data":[{"type":"Person","id":"29316074"},{"type":"Person","id":"29316075"},{"type":"Person","id":"28432988"},{"type":"Person","id":"29315726"},{"type":"Person","id":"38579572"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3815989"}},{"type":"Household","id":"3815990","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/990-square.png","created_at":"2017-09-03T20:54:07Z","member_count":5,"name":"Bostick
         Household","primary_contact_id":"29316072","primary_contact_name":"Taylor
-        Bostick","updated_at":"2017-09-24T16:04:53Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"29316072"}},"people":{"data":[{"type":"Person","id":"29316073"},{"type":"Person","id":"29316072"},{"type":"Person","id":"29315723"},{"type":"Person","id":"29315724"},{"type":"Person","id":"29315725"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3815990"}},{"type":"Household","id":"3815993","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/993-square.png","created_at":"2017-09-03T20:56:00Z","member_count":5,"name":"Hastings
+        Bostick","updated_at":"2017-09-24T16:04:53Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"29316072"}},"people":{"data":[{"type":"Person","id":"29316072"},{"type":"Person","id":"29316073"},{"type":"Person","id":"29315723"},{"type":"Person","id":"29315724"},{"type":"Person","id":"29315725"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3815990"}},{"type":"Household","id":"3815993","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/993-square.png","created_at":"2017-09-03T20:56:00Z","member_count":5,"name":"Hastings
         Household","primary_contact_id":"29316077","primary_contact_name":"Anna Hastings","updated_at":"2017-09-03T20:56:00Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"29316077"}},"people":{"data":[{"type":"Person","id":"29316077"},{"type":"Person","id":"29316076"},{"type":"Person","id":"29315730"},{"type":"Person","id":"29975605"},{"type":"Person","id":"29315729"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3815993"}},{"type":"Household","id":"3816000","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/0-square.png","created_at":"2017-09-03T20:57:48Z","member_count":6,"name":"Johnson
         Household","primary_contact_id":"29316078","primary_contact_name":"Cory Johnson","updated_at":"2017-09-03T20:57:48Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"29316078"}},"people":{"data":[{"type":"Person","id":"29316078"},{"type":"Person","id":"29316079"},{"type":"Person","id":"29315732"},{"type":"Person","id":"29315734"},{"type":"Person","id":"29315733"},{"type":"Person","id":"29315735"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3816000"}},{"type":"Household","id":"3816003","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/3-square.png","created_at":"2017-09-03T20:59:24Z","member_count":3,"name":"Jones
         Household","primary_contact_id":"29316080","primary_contact_name":"Krissy
@@ -113,6 +115,6 @@ http_interactions:
         Household","primary_contact_id":"29787708","primary_contact_name":"Kymberly
         Richard","updated_at":"2017-09-24T15:30:09Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"29787708"}},"people":{"data":[{"type":"Person","id":"29787708"},{"type":"Person","id":"29787687"},{"type":"Person","id":"29315746"},{"type":"Person","id":"29315743"},{"type":"Person","id":"29315744"},{"type":"Person","id":"29315745"},{"type":"Person","id":"45314067"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3854119"}},{"type":"Household","id":"3920839","attributes":{"avatar":"https://dio0bc3q0omo2.cloudfront.net/839-square.png","created_at":"2017-09-24T16:10:39Z","member_count":4,"name":"Soderman
         Household","primary_contact_id":"4486455","primary_contact_name":"Kiersten
-        Soderman","updated_at":"2017-09-24T16:10:39Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"4486455"}},"people":{"data":[{"type":"Person","id":"4486455"},{"type":"Person","id":"4486457"},{"type":"Person","id":"29896226"},{"type":"Person","id":"43537776"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3920839"}}],"included":[],"meta":{"total_count":846,"count":25,"next":{"offset":25},"can_order_by":["name","member_count","primary_contact_name","created_at","updated_at"],"can_query_by":["name","member_count","primary_contact_name","created_at","updated_at"],"can_include":["people"],"parent":{"id":"86977","type":"Organization"}}}'
-  recorded_at: Thu, 27 May 2021 19:02:34 GMT
+        Soderman","updated_at":"2017-09-24T16:10:39Z"},"relationships":{"primary_contact":{"data":{"type":"Person","id":"4486455"}},"people":{"data":[{"type":"Person","id":"4486455"},{"type":"Person","id":"4486457"},{"type":"Person","id":"29896226"},{"type":"Person","id":"43537776"}]}},"links":{"self":"https://api.planningcenteronline.com/people/v2/households/3920839"}}],"included":[],"meta":{"total_count":1077,"count":25,"next":{"offset":25},"can_order_by":["name","member_count","primary_contact_name","created_at","updated_at"],"can_query_by":["name","member_count","primary_contact_name","created_at","updated_at"],"can_include":["people"],"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Fri, 08 Apr 2022 18:48:53 GMT
 recorded_with: VCR 6.0.0

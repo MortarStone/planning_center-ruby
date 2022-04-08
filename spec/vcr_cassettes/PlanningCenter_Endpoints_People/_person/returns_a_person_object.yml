@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/people/v2/people/2669139?offset=0&per_page=100
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 26fcff069aa11d2f40ec48876948fce30e322e027a25706ec9e114ee874101c8
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 14 May 2021 14:15:27 GMT
+      - Fri, 08 Apr 2022 18:49:11 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -41,13 +43,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '21'
+      - '17'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.2.1
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -64,20 +66,20 @@ http_interactions:
       vary:
       - Accept, Accept-Encoding, Origin
       x-pco-api-processed-as-version:
-      - '2020-07-22'
+      - '2022-01-28'
       etag:
-      - W/"6b7b64c9f5803f8ceaab616988ee4cc5"
+      - W/"ad11f595adb6ee761f4d9027a959f34c"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 1b228952-2d8b-4164-9dc0-3e3d9e644fe1
+      - 8cae46d8-06b1-49d7-adee-88ff58576c82
       x-runtime:
-      - '0.061140'
+      - '0.040289'
       strict-transport-security:
       - max-age=31536000; includeSubDomains
     body:
       encoding: UTF-8
       string: '{"data":{"type":"Person","id":"2669139","attributes":{"accounting_administrator":false,"anniversary":null,"avatar":"https://avatars.planningcenteronline.com/uploads/initials/GC.png","birthdate":"1987-06-20","can_create_forms":false,"child":false,"created_at":"2012-10-26T04:55:00Z","demographic_avatar_url":"https://avatars.planningcenteronline.com/uploads/initials/GC.png","directory_status":"no_access","first_name":"Gretchen","gender":"F","given_name":null,"grade":null,"graduation_year":null,"inactivated_at":null,"last_name":"Chan","medical_notes":null,"membership":"Covenant
-        Member","middle_name":null,"name":"Gretchen Chan","nickname":null,"passed_background_check":false,"people_permissions":null,"remote_id":null,"school_type":null,"site_administrator":false,"status":"active","updated_at":"2020-10-07T18:45:50Z"},"relationships":{"primary_campus":{"data":null}},"links":{"":"https://api.planningcenteronline.com/people/v2/people/2669139/","addresses":"https://api.planningcenteronline.com/people/v2/people/2669139/addresses","apps":"https://api.planningcenteronline.com/people/v2/people/2669139/apps","connected_people":"https://api.planningcenteronline.com/people/v2/people/2669139/connected_people","emails":"https://api.planningcenteronline.com/people/v2/people/2669139/emails","field_data":"https://api.planningcenteronline.com/people/v2/people/2669139/field_data","household_memberships":"https://api.planningcenteronline.com/people/v2/people/2669139/household_memberships","households":"https://api.planningcenteronline.com/people/v2/people/2669139/households","inactive_reason":null,"marital_status":"https://api.planningcenteronline.com/people/v2/marital_statuses/296943","message_groups":"https://api.planningcenteronline.com/people/v2/people/2669139/message_groups","messages":"https://api.planningcenteronline.com/people/v2/people/2669139/messages","name_prefix":null,"name_suffix":null,"notes":"https://api.planningcenteronline.com/people/v2/people/2669139/notes","organization":"https://api.planningcenteronline.com/people/v2/people/2669139/organization","person_apps":"https://api.planningcenteronline.com/people/v2/people/2669139/person_apps","phone_numbers":"https://api.planningcenteronline.com/people/v2/people/2669139/phone_numbers","platform_notifications":"https://api.planningcenteronline.com/people/v2/people/2669139/platform_notifications","primary_campus":null,"school":null,"social_profiles":"https://api.planningcenteronline.com/people/v2/people/2669139/social_profiles","workflow_cards":"https://api.planningcenteronline.com/people/v2/people/2669139/workflow_cards","self":"https://api.planningcenteronline.com/people/v2/people/2669139"}},"included":[],"meta":{"can_include":["addresses","emails","field_data","households","inactive_reason","marital_status","name_prefix","name_suffix","organization","person_apps","phone_numbers","platform_notifications","primary_campus","school","social_profiles"],"parent":{"id":"86977","type":"Organization"}}}'
-  recorded_at: Fri, 14 May 2021 14:15:27 GMT
+        Member","middle_name":null,"name":"Gretchen Chan","nickname":null,"passed_background_check":false,"people_permissions":null,"remote_id":null,"school_type":null,"site_administrator":false,"status":"active","updated_at":"2020-10-07T18:45:50Z"},"relationships":{"primary_campus":{"data":null}},"links":{"":"https://api.planningcenteronline.com/people/v2/people/2669139/","addresses":"https://api.planningcenteronline.com/people/v2/people/2669139/addresses","apps":"https://api.planningcenteronline.com/people/v2/people/2669139/apps","connected_people":"https://api.planningcenteronline.com/people/v2/people/2669139/connected_people","emails":"https://api.planningcenteronline.com/people/v2/people/2669139/emails","field_data":"https://api.planningcenteronline.com/people/v2/people/2669139/field_data","household_memberships":"https://api.planningcenteronline.com/people/v2/people/2669139/household_memberships","households":"https://api.planningcenteronline.com/people/v2/people/2669139/households","inactive_reason":null,"marital_status":"https://api.planningcenteronline.com/people/v2/marital_statuses/296943","message_groups":"https://api.planningcenteronline.com/people/v2/people/2669139/message_groups","messages":"https://api.planningcenteronline.com/people/v2/people/2669139/messages","name_prefix":null,"name_suffix":null,"notes":"https://api.planningcenteronline.com/people/v2/people/2669139/notes","organization":"https://api.planningcenteronline.com/people/v2/people/2669139/organization","person_apps":"https://api.planningcenteronline.com/people/v2/people/2669139/person_apps","phone_numbers":"https://api.planningcenteronline.com/people/v2/people/2669139/phone_numbers","platform_notifications":"https://api.planningcenteronline.com/people/v2/people/2669139/platform_notifications","primary_campus":null,"school":null,"social_profiles":"https://api.planningcenteronline.com/people/v2/people/2669139/social_profiles","workflow_cards":"https://api.planningcenteronline.com/people/v2/people/2669139/workflow_cards","workflow_shares":"https://api.planningcenteronline.com/people/v2/people/2669139/workflow_shares","self":"https://api.planningcenteronline.com/people/v2/people/2669139"}},"included":[],"meta":{"can_include":["addresses","emails","field_data","households","inactive_reason","marital_status","name_prefix","name_suffix","organization","person_apps","phone_numbers","platform_notifications","primary_campus","school","social_profiles"],"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Fri, 08 Apr 2022 18:49:11 GMT
 recorded_with: VCR 6.0.0

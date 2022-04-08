@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/people/v2/people/2669139/phone_numbers/60503519?offset=0&per_page=100
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 6381c30e17532314db41bcf1499bb88a17551470abe22671b5fc839e0af53269
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 27 May 2021 19:11:09 GMT
+      - Fri, 08 Apr 2022 18:49:13 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -41,13 +43,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '3'
+      - '20'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.3
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -64,20 +66,21 @@ http_interactions:
       vary:
       - Accept, Accept-Encoding, Origin
       x-pco-api-processed-as-version:
-      - '2020-07-22'
+      - '2022-01-28'
       etag:
-      - W/"70decbf0583bdedc1f460d33c863729d"
+      - W/"94ba5bfccdc7cd0266b37436fa354827"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - cf7cf395-4e7b-4e2e-bfb1-abcd965455e2
+      - 8e656c58-778c-4a2b-96e2-4710279661c1
       x-runtime:
-      - '0.144787'
+      - '0.047967'
       strict-transport-security:
       - max-age=31536000; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"PhoneNumber","id":"60503519","attributes":{"carrier":null,"created_at":"2020-09-30T19:45:44Z","location":"Mobile","number":"(520)
+      string: '{"data":{"type":"PhoneNumber","id":"60503519","attributes":{"carrier":null,"country_code":"US","created_at":"2020-09-30T19:45:44Z","e164":"+15208206614","international":"+1
+        520-820-6614","location":"Mobile","national":"(520) 820-6614","number":"(520)
         820-6614","primary":true,"updated_at":"2020-09-30T19:45:44Z"},"relationships":{"person":{"data":{"type":"Person","id":"2669139"}}},"links":{"self":"https://api.planningcenteronline.com/people/v2/people/2669139/phone_numbers/60503519"}},"included":[],"meta":{"parent":{"id":"2669139","type":"Person"}}}'
-  recorded_at: Thu, 27 May 2021 19:11:09 GMT
+  recorded_at: Fri, 08 Apr 2022 18:49:12 GMT
 recorded_with: VCR 6.0.0
