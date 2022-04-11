@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PlanningCenter
   class Tab < Base
     IMMUTABLE_FIELDS = %i[id slug].freeze
@@ -15,7 +17,7 @@ module PlanningCenter
       end
     end
 
-    define_attribute_methods *FIELDS
+    define_attribute_methods(*FIELDS)
 
     validates :name, presence: true
   end

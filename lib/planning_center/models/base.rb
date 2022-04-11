@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PlanningCenter
   class Base
     include ActiveModel::Attributes
@@ -28,8 +30,6 @@ module PlanningCenter
       @persisted = false
       assign_attributes(attributes) if attributes
       yield self if block_given?
-
-      self
     end
 
     class << self
@@ -41,7 +41,7 @@ module PlanningCenter
 
       def where(params = {})
         params = { where: params }
-        response = client.get(base_endpoint, params).dig('data')
+        response = client.get(base_endpoint, params)['data']
 
         response.map do |hsh|
           attrs = format_response(hsh)
@@ -52,7 +52,7 @@ module PlanningCenter
       def find(id)
         return if id.nil?
 
-        response = client.get("#{base_endpoint}/#{id}").dig('data')
+        response = client.get("#{base_endpoint}/#{id}")['data']
         attrs = format_response(response)
 
         new attrs, &:persist!
@@ -76,7 +76,7 @@ module PlanningCenter
       end
 
       def all
-        response = client.get(base_endpoint).dig('data')
+        response = client.get(base_endpoint)['data']
 
         response.map do |hsh|
           attrs = format_response(hsh)
@@ -84,8 +84,8 @@ module PlanningCenter
         end
       end
 
-      def each
-        all.each { |obj| yield obj }
+      def each(&block)
+        all.each(&block)
       end
 
       def base_endpoint
@@ -93,14 +93,12 @@ module PlanningCenter
       end
 
       def format_response(response)
-        hsh = response.dig('attributes').merge(id: response.dig('id'))
+        hsh = response['attributes'].merge(id: response['id'])
 
-        response.dig('relationships')&.each do |k, v|
+        response['relationships']&.each do |_k, v|
           attr = "#{v.dig('data', 'type')&.underscore}_id"
 
-          if attribute_names.include? attr
-            hsh[attr] = v.dig('data', 'id')
-          end
+          hsh[attr] = v.dig('data', 'id') if attribute_names.include? attr
         end
 
         hsh
@@ -130,11 +128,11 @@ module PlanningCenter
 
         body = format_body(attributes.slice(*self.class::FIELDS))
 
-        if persisted?
-          response = client.patch(endpoint, body).dig('data')
-        else
-          response = client.post(endpoint, body).dig('data')
-        end
+        response = if persisted?
+                     client.patch(endpoint, body)['data']
+                   else
+                     client.post(endpoint, body)['data']
+                   end
 
         assign_attributes(format_response(response))
 

@@ -56,7 +56,7 @@ module PlanningCenter
       request(method: :delete, path: path)
     end
 
-    def request(method: :get, path:, body: {})
+    def request(path:, method: :get, body: {})
       res = connection.public_send(method) do |req|
         req.url "#{url}/#{path}"
         req.options.timeout = 300 # 5 minutes

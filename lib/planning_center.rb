@@ -5,11 +5,11 @@ require_relative 'planning_center/exceptions'
 require_relative 'planning_center/version'
 require 'planning_center/configuration'
 require 'active_model'
-Dir[File.join(__dir__, 'planning_center', 'models', '*.rb')].each { |file| require file }
+Dir[File.join(__dir__, 'planning_center', 'models', '*.rb')].sort.each { |file| require file }
 
 module PlanningCenter
   class << self
-    attr_accessor :configuration
+    attr_writer :configuration
 
     def configuration
       @configuration ||= Configuration.new

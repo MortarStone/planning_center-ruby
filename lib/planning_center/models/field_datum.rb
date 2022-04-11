@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module PlanningCenter
   class FieldDatum < Base
     IMMUTABLE_FIELDS = %i[id file file_content_type file_name file_size
-      person_id].freeze
+                          person_id].freeze
     FIELDS = %i[field_definition_id value].freeze
 
     attribute :id, :integer
@@ -20,7 +22,7 @@ module PlanningCenter
       end
     end
 
-    define_attribute_methods *FIELDS
+    define_attribute_methods(*FIELDS)
 
     validates :field_definition_id, :person_id, presence: true
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PlanningCenter
   class FieldDefinition < Base
     IMMUTABLE_FIELDS = %i[id tab_id].freeze
@@ -19,7 +21,7 @@ module PlanningCenter
       end
     end
 
-    define_attribute_methods *FIELDS
+    define_attribute_methods(*FIELDS)
 
     validates :data_type, :name, :tab_id, presence: true
 

@@ -46,9 +46,7 @@ module PlanningCenter
     def format_response
       results = response.body
 
-      if !results.blank?
-        results['headers'] = response.headers
-      end
+      results['headers'] = response.headers unless results.blank?
 
       results
     end
