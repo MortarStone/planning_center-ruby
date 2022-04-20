@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/giving/v2/recurring_donations/362440?offset=0&per_page=100
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 26fcff069aa11d2f40ec48876948fce30e322e027a25706ec9e114ee874101c8
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 14 May 2021 14:15:30 GMT
+      - Fri, 08 Apr 2022 18:49:18 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -41,13 +43,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '27'
+      - '1'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.2.1
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -62,21 +64,21 @@ http_interactions:
       access-control-allow-origin:
       - "*"
       vary:
-      - Accept, Accept-Encoding, Origin
+      - Accept
       x-pco-api-processed-as-version:
       - '2019-10-18'
       etag:
-      - W/"9d39cdd5f2f6e52308360a556f331ba6"
+      - W/"0f8f6dca978a9b34f355121c205b32ac"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 2b59068d-8af9-4295-82f2-0e3ee63368f4
+      - c1a5871a-b120-493a-a07c-2ed188c92e92
       x-runtime:
-      - '0.045519'
+      - '0.050989'
       strict-transport-security:
-      - max-age=31536000; includeSubDomains
+      - max-age=63072000; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"RecurringDonation","id":"362440","attributes":{"amount_cents":5000,"amount_currency":"USD","created_at":"2020-02-04T00:02:32Z","last_donation_received_at":"2021-04-16T11:29:46Z","next_occurrence":"2021-05-16T05:00:00Z","release_hold_at":null,"schedule":{"day_in_month":{"day":16}},"status":"active","updated_at":"2021-04-16T11:29:50Z"},"links":{"designations":"https://api.planningcenteronline.com/giving/v2/recurring_donations/362440/designations","payment_method":"https://api.planningcenteronline.com/giving/v2/people/72569993/payment_methods/1059141","self":"https://api.planningcenteronline.com/giving/v2/recurring_donations/362440"}},"included":[],"meta":{"can_include":["designations"],"parent":{"id":"86977","type":"Organization"}}}'
-  recorded_at: Fri, 14 May 2021 14:15:29 GMT
+      string: '{"data":{"type":"RecurringDonation","id":"362440","attributes":{"amount_cents":5000,"amount_currency":"USD","created_at":"2020-02-04T00:02:32Z","last_donation_received_at":"2022-03-16T11:06:21Z","next_occurrence":"2022-04-16T05:00:00Z","release_hold_at":null,"schedule":{"day_in_month":{"day":16}},"status":"active","updated_at":"2022-03-16T11:06:27Z"},"relationships":{"person":{"data":{"type":"Person","id":"72569993"}}},"links":{"designations":"https://api.planningcenteronline.com/giving/v2/recurring_donations/362440/designations","payment_method":"https://api.planningcenteronline.com/giving/v2/people/72569993/payment_methods/1059141","self":"https://api.planningcenteronline.com/giving/v2/recurring_donations/362440"}},"included":[],"meta":{"can_include":["designations"],"parent":{"id":"86977","type":"Organization"}}}'
+  recorded_at: Fri, 08 Apr 2022 18:49:18 GMT
 recorded_with: VCR 6.0.0

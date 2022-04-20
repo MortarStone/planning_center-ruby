@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/people/v2/campuses?offset=0&order=created_at&per_page=100
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
+      User-Agent:
+      - Faraday v2.2.0
       Authorization:
       - Bearer abc
-      User-Agent:
-      - Faraday v1.4.1
+      Content-Type:
+      - application/json
   response:
     status:
       code: 401
       message: Unauthorized
     headers:
       date:
-      - Fri, 14 May 2021 14:15:22 GMT
+      - Fri, 08 Apr 2022 18:48:37 GMT
       content-type:
       - text/html; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -43,9 +45,9 @@ http_interactions:
       cache-control:
       - no-cache
       x-request-id:
-      - '09266c92-321e-492d-8728-810435f314f7'
+      - 4db322f5-9599-4a50-9bfa-6b69db0961b0
       x-runtime:
-      - '0.010715'
+      - '0.006910'
       strict-transport-security:
       - max-age=31536000; includeSubDomains
     body:
@@ -53,5 +55,5 @@ http_interactions:
       string: 'HTTP Basic: Access denied.
 
         '
-  recorded_at: Fri, 14 May 2021 14:15:22 GMT
+  recorded_at: Fri, 08 Apr 2022 18:48:37 GMT
 recorded_with: VCR 6.0.0

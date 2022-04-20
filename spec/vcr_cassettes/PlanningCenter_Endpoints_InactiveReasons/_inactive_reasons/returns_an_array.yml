@@ -4,26 +4,28 @@ http_interactions:
     method: get
     uri: https://api.planningcenteronline.com/people/v2/inactive_reasons?offset=0&per_page=25
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: "{}"
     headers:
-      Authorization:
-      - Bearer 6381c30e17532314db41bcf1499bb88a17551470abe22671b5fc839e0af53269
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Thu, 27 May 2021 19:04:20 GMT
+      - Fri, 08 Apr 2022 18:48:56 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
-      - keep-alive
+      - close
       server:
       - nginx
       x-frame-options:
@@ -41,13 +43,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '1'
+      - '26'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_3.9.3
+      - ENG_4.7.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -64,20 +66,20 @@ http_interactions:
       vary:
       - Accept, Accept-Encoding, Origin
       x-pco-api-processed-as-version:
-      - '2020-07-22'
+      - '2022-01-28'
       etag:
-      - W/"683722722f37275ee0049f46e8e622c9"
+      - W/"efa5896e3103f4da6a1eec4f1e76cd5f"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 4b7e4b0e-221d-45c4-a558-ae8603e999f6
+      - 375dbb2c-a79c-48e2-980b-755c56edf536
       x-runtime:
-      - '0.044615'
+      - '0.045850'
       strict-transport-security:
       - max-age=31536000; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"links":{"self":"https://api.planningcenteronline.com/people/v2/inactive_reasons?offset=0&per_page=25"},"data":[{"type":"InactiveReason","id":"296935","attributes":{"value":"Moved"},"links":{"self":"https://api.planningcenteronline.com/people/v2/inactive_reasons/296935"}},{"type":"InactiveReason","id":"296937","attributes":{"value":"New
+      string: '{"links":{"self":"https://api.planningcenteronline.com/people/v2/inactive_reasons?&offset=0&per_page=25"},"data":[{"type":"InactiveReason","id":"296935","attributes":{"value":"Moved"},"links":{"self":"https://api.planningcenteronline.com/people/v2/inactive_reasons/296935"}},{"type":"InactiveReason","id":"296937","attributes":{"value":"New
         Church"},"links":{"self":"https://api.planningcenteronline.com/people/v2/inactive_reasons/296937"}},{"type":"InactiveReason","id":"296939","attributes":{"value":"Deceased"},"links":{"self":"https://api.planningcenteronline.com/people/v2/inactive_reasons/296939"}}],"included":[],"meta":{"total_count":3,"count":3,"can_order_by":["value"],"can_query_by":["value"],"parent":{"id":"86977","type":"Organization"}}}'
-  recorded_at: Thu, 27 May 2021 19:04:20 GMT
+  recorded_at: Fri, 08 Apr 2022 18:48:56 GMT
 recorded_with: VCR 6.0.0
