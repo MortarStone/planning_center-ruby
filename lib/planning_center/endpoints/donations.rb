@@ -18,6 +18,13 @@ module PlanningCenter
           { order: :created_at }.merge(params)
         )
       end
+
+      def person_donations(id, params = {})
+        get(
+          "giving/v2/people/#{id}/donations",
+          { order: :created_at }.merge(params)
+        )
+      end
     end
   end
 end
