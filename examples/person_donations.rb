@@ -2,5 +2,5 @@
 
 require_relative 'helper'
 
-person = @client.person(10_444_578)
-print_person(person)
+donations = @client.person_donations(10_444_578)
+print_donations(donations)
