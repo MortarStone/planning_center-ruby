@@ -35,8 +35,8 @@ module PlanningCenter
       Tab.find(tab_id)
     end
 
-    def field_options
-      FieldOption.all(field_definition_id: id)
+    def field_options(params = {})
+      FieldOption.where(field_definition_id: id, **params)
     end
 
     private

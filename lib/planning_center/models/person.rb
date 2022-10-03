@@ -54,7 +54,7 @@ module PlanningCenter
     validates :first_name, :last_name, presence: true
 
     def field_data(params = {})
-      params = { where: params }
+      params = { where: params, include: [:field_option] }
       response = client.get("people/v2/people/#{id}/field_data", params)['data']
 
       response.map do |hsh|
