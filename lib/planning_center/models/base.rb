@@ -39,8 +39,8 @@ module PlanningCenter
         )
       end
 
-      def where(params = {})
-        params = { where: params }
+      def where(include: [], **params)
+        params = { where: params, include: include }
         response = client.get(base_endpoint, params)['data']
 
         response.map do |hsh|

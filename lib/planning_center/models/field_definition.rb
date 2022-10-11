@@ -5,6 +5,9 @@ module PlanningCenter
     IMMUTABLE_FIELDS = %i[id tab_id].freeze
     FIELDS = %i[config data_type deleted_at name sequence slug].freeze
 
+    DATA_TYPES = %w[text string date file boolean
+                    select checkboxes number header].freeze
+
     attribute :id, :integer
     attribute :config, :string
     attribute :data_type, :string
@@ -23,12 +26,17 @@ module PlanningCenter
 
     define_attribute_methods(*FIELDS)
 
-    validates :data_type, :name, :tab_id, presence: true
+    validates :name, :tab_id, presence: true
+    validates :data_type, inclusion: { in: DATA_TYPES }, presence: true
 
     # belongs_to :tab
 
     def tab
       Tab.find(tab_id)
+    end
+
+    def field_options(params = {})
+      FieldOption.where(field_definition_id: id, **params)
     end
 
     private

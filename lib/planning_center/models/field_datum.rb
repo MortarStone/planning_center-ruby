@@ -3,7 +3,7 @@
 module PlanningCenter
   class FieldDatum < Base
     IMMUTABLE_FIELDS = %i[id file file_content_type file_name file_size
-                          person_id].freeze
+                          person_id field_option_id].freeze
     FIELDS = %i[field_definition_id value].freeze
 
     attribute :id, :integer
@@ -14,6 +14,7 @@ module PlanningCenter
     attribute :file_size, :integer
     attribute :person_id, :integer
     attribute :value, :string
+    attribute :field_option_id, :integer
 
     FIELDS.each do |attr|
       define_method "#{attr}=" do |value|
