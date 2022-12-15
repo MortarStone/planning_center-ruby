@@ -36,7 +36,7 @@ module PlanningCenter
     attribute :passed_background_check, :boolean
     attribute :people_permissions, :string
     attribute :primary_campus_id, :integer
-    attribute :remote_id, :integer
+    attribute :remote_id, :big_integer
     attribute :school_type, :string
     attribute :site_administrator, :boolean
     attribute :status, :string
