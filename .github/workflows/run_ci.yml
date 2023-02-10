@@ -1,8 +1,7 @@
 env:
-  RUBY_VERSION: 3.1.0
   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-name: PCO wrapper Build
+name: CI Build
 on: push
 jobs:
   rubocop:
@@ -16,7 +15,7 @@ jobs:
       - name: Check styles
         run: bundle exec rubocop
   rspec:
-    name: Run Specs
+    name: Run RSpec
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
