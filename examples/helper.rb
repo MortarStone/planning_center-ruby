@@ -25,7 +25,7 @@ require 'dotenv'
 Dotenv.load('../.env')
 
 @client = PlanningCenter::Client.new(
-  access_token: ENV['ACCESS_TOKEN']
+  access_token: ENv.fetch('ACCESS_TOKEN')
 )
 
 def print_list(object_name, pk_id_name, response)

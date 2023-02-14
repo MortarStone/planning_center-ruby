@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :client, class: PlanningCenter::Client do
-    access_token { ENV['ACCESS_TOKEN'] }
+    access_token { ENV.fetch('ACCESS_TOKEN') }
 
     initialize_with { new(access_token: access_token) }
   end
