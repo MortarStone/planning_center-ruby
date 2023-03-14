@@ -34,7 +34,7 @@ module PlanningCenter
 
     class << self
       def client
-        @client ||= PlanningCenter::Client.new(
+        @client = PlanningCenter::Client.new(
           access_token: PlanningCenter.configuration.access_token
         )
       end

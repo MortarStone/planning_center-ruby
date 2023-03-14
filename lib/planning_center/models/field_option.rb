@@ -35,7 +35,7 @@ module PlanningCenter
       def where(field_definition_id:, **params)
         self.field_definition_id = field_definition_id
 
-        super(params)
+        super(**params)
       end
 
       def find(id, field_definition_id:)
