@@ -5,7 +5,7 @@ module PlanningCenter
     attr_accessor :access_token
 
     def initialize
-      @access_token = ENV.fetch('ACCESS_TOKEN')
+      @access_token = nil
     end
   end
 end
