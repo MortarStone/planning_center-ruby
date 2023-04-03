@@ -4,7 +4,7 @@ module PlanningCenter
   class Person < Base
     IMMUTABLE_FIELDS = %i[id can_create_forms created_at demographic_avatar_url
                           directory_status name passed_background_check school_type
-                          updated_at].freeze
+                          updated_at can_email_lists].freeze
     FIELDS = %i[accounting_administrator anniversary avatar birthdate child
                 first_name gender given_name grade graduation_year inactivated_at
                 last_name medical_notes membership middle_name nickname
@@ -17,6 +17,7 @@ module PlanningCenter
     attribute :avatar, :string
     attribute :birthdate, :date
     attribute :can_create_forms, :boolean
+    attribute :can_email_lists, :boolean
     attribute :child, :boolean
     attribute :created_at, :datetime
     attribute :demographic_avatar_url, :string
