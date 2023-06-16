@@ -22,13 +22,15 @@ module PlanningCenter
     def stringify_params
       arr = []
       default_params.merge(params).map do |k, v|
+        if k == :where
+          arr += v
+          next
+        end
+
         if v.is_a?(Array)
           v = v.join('%2C')
         elsif is_a?(Date)
           v = v.strftime('%Y-%m-%d')
-        elsif k == :where
-          v.each { |param, value| arr << "where[#{param}]=#{value}" }
-          next
         end
         arr << "#{k}=#{v}"
       end
