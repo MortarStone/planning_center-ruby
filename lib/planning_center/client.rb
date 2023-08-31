@@ -21,6 +21,7 @@ module PlanningCenter
     include PlanningCenter::Endpoints::RecurringDonationDesignations
     include PlanningCenter::Endpoints::RecurringDonations
     include PlanningCenter::Endpoints::Refunds
+    include PlanningCenter::Endpoints::Webhooks
 
     attr_accessor :url
 
@@ -59,6 +60,7 @@ module PlanningCenter
     def request(path:, method: :get, body: {})
       res = connection.public_send(method) do |req|
         req.url "#{url}/#{path}"
+        puts "#{url}/#{path}"
         req.options.timeout = 300 # 5 minutes
         req.body = body.to_json
       end
