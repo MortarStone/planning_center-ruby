@@ -3,8 +3,8 @@
 module PlanningCenter
   module Endpoints
     module Webhooks
-      def webhook_subscriptions
-        get('webhooks/v2/subscriptions')
+      def subscriptions(params = {})
+        get('webhooks/v2/subscriptions', params)
       end
     end
   end
