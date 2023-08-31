@@ -20,6 +20,7 @@ require_relative 'helpers/pledge_campaigns'
 require_relative 'helpers/recurring_donation_designations'
 require_relative 'helpers/recurring_donations'
 require_relative 'helpers/refunds'
+require_relative 'helpers/webhook_subscriptions'
 
 require 'dotenv'
 Dotenv.load('../.env')
