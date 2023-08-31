@@ -2,9 +2,5 @@
 
 require_relative 'helper'
 
-subscriptions = @client.subscriptions(
-  where: [
-    "where[url]=https://app.mortarstone.com/hooks/companies/8/planning_center/events"
-  ]
-)
+subscriptions = @client.subscriptions
 print_subscriptions(subscriptions)
