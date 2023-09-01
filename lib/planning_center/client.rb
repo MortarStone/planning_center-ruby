@@ -60,7 +60,6 @@ module PlanningCenter
     def request(path:, method: :get, body: {})
       res = connection.public_send(method) do |req|
         req.url "#{url}/#{path}"
-        puts "#{url}/#{path}"
         req.options.timeout = 300 # 5 minutes
         req.body = body.to_json
       end
