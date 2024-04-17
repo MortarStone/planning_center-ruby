@@ -2,5 +2,5 @@
 
 require_relative 'endpoint_helper'
 
-fund = @client.fund(101_540)
-print_fund(fund)
+field_data = @client.field_data
+print_field_data(field_data)

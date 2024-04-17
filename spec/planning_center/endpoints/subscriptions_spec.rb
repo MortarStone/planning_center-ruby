@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe PlanningCenter::Endpoints::Webhooks do
+RSpec.describe PlanningCenter::Endpoints::Subscriptions do
   let!(:client) { FactoryBot.build(:client) }
 
   describe '#subscriptions', :vcr do

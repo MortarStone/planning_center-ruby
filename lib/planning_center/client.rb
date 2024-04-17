@@ -9,6 +9,9 @@ module PlanningCenter
     include PlanningCenter::Endpoints::DesignationRefunds
     include PlanningCenter::Endpoints::Donations
     include PlanningCenter::Endpoints::Emails
+    include PlanningCenter::Endpoints::FieldData
+    include PlanningCenter::Endpoints::FieldDefinitions
+    include PlanningCenter::Endpoints::FieldOptions
     include PlanningCenter::Endpoints::Funds
     include PlanningCenter::Endpoints::Households
     include PlanningCenter::Endpoints::InactiveReasons
@@ -21,7 +24,8 @@ module PlanningCenter
     include PlanningCenter::Endpoints::RecurringDonationDesignations
     include PlanningCenter::Endpoints::RecurringDonations
     include PlanningCenter::Endpoints::Refunds
-    include PlanningCenter::Endpoints::Webhooks
+    include PlanningCenter::Endpoints::Subscriptions
+    include PlanningCenter::Endpoints::Tabs
 
     attr_accessor :url
 
