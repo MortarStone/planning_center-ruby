@@ -2,39 +2,36 @@
 
 module PlanningCenter
   class RequestFormatter
-    attr_accessor :path, :params
+    attr_accessor :params
 
-    def initialize(path:, params: {})
-      @path = path
+    def initialize(params: {})
       @params = params
     end
 
     def call
-      "#{path}?#{stringify_params}"
+      format_date_filters
+      default_params.merge(params)
     end
 
     private
 
-    def default_params
-      { per_page: 100, offset: 0 }
+    def format_date_filters
+      params.transform_values { |v| format_value(v) }
     end
 
-    def stringify_params
-      arr = []
-      default_params.merge(params).map do |k, v|
-        if k == :where
-          arr += v
-          next
-        end
-
-        if v.is_a?(Array)
-          v = v.join('%2C')
-        elsif is_a?(Date)
-          v = v.strftime('%Y-%m-%d')
-        end
-        arr << "#{k}=#{v}"
+    def format_value(value)
+      case value.class
+      when DateTime
+        value.strftime('%Y-%m-%dT%H:%M:%S')
+      when Date
+        value.strftime('%Y-%m-%d')
+      else
+        value
       end
-      arr.join('&').gsub(' ', '%20')
+    end
+
+    def default_params
+      { per_page: 100, offset: 0 }
     end
   end
 end

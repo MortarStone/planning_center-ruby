@@ -40,16 +40,15 @@ module PlanningCenter
     end
 
     def get(path, params = {})
-      path = RequestFormatter.new(path: path, params: params).call
-
-      request(path: path)
+      params = RequestFormatter.new(params: params).call
+      request(method: :get, path: path, params: params)
     end
 
-    def post(path, body = {})
+    def post(path, body = nil)
       request(method: :post, path: path, body: body)
     end
 
-    def patch(path, body = {})
+    def patch(path, body = nil)
       request(method: :patch, path: path, body: body)
     end
 
@@ -57,14 +56,16 @@ module PlanningCenter
       request(method: :delete, path: path)
     end
 
-    def request(path:, method: :get, body: {})
-      res = connection.public_send(method) do |req|
-        req.url "#{url}/#{path}"
-        req.options.timeout = 300 # 5 minutes
-        req.body = body.to_json
+    def request(path:, method: :get, params: {}, body: nil)
+      response = connection.public_send(method) do |req|
+        req.url path
+        req.options.timeout = 60 # 1 minute
+        req.params = params
+        req.body = body
       end
+      puts response.env.url
 
-      ResponseHandler.new(response: res).call
+      ResponseHandler.new(response).call
     end
   end
 end

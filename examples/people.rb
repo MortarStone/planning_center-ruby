@@ -11,6 +11,9 @@ people = @client.people(
     inactive_reason
     addresses
     name_suffix
-  ]
+  ],
+  # 'where[first_name]' => 'Am%'
+  # 'where[created_at][gte]' => '2022-11-30T23:31:16Z'
+  'where[created_at][gte]' => DateTime.new(2022, 11, 30, 23, 31, 16)
 )
 print_people(people)

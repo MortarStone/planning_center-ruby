@@ -4,7 +4,7 @@ module PlanningCenter
   class ResponseHandler
     attr_accessor :response
 
-    def initialize(response:)
+    def initialize(response)
       @response = response
     end
 
