@@ -2,9 +2,13 @@
 
 module PlanningCenter
   class Subscription < Base
-    IMMUTABLE_FIELDS = %i[id application_id authenticity_secret created_at
-                          updated_at].freeze
-    FIELDS = %i[active name url].freeze
+    FIELDS = %i[
+      id application_id authenticity_secret created_at updated_at
+      active name url
+    ].freeze
+    CREATABLE_FIELDS = %i[active name url].freeze
+    UPDATABLE_FIELDS = %i[active].freeze
+    QUERIABLE_FIELDS = %i[application_id].freeze
 
     attribute :id, :integer
     attribute :application_id, :string
@@ -26,10 +30,8 @@ module PlanningCenter
 
     validates :url, :name, presence: true
 
-    class << self
-      def base_endpoint
-        "webhooks/v2/#{model_name.element.pluralize}"
-      end
+    def self.base_endpoint
+      'webhooks/v2/subscriptions'
     end
   end
 end

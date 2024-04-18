@@ -2,8 +2,10 @@
 
 module PlanningCenter
   class Tab < Base
-    IMMUTABLE_FIELDS = %i[id slug].freeze
     FIELDS = %i[id slug name sequence].freeze
+    CREATABLE_FIELDS = %i[name sequence].freeze
+    UPDATABLE_FIELDS = %i[name sequence].freeze
+    QUERIABLE_FIELDS = %i[name sequence slug].freeze
 
     attribute :id, :integer
     attribute :name, :string

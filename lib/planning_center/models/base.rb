@@ -71,6 +71,12 @@ module PlanningCenter
       end
 
       def format_parameters(args)
+        extra_keys = args.keys - self::QUERIABLE_FIELDS
+        if extra_keys.present?
+          raise PlanningCenter::Exceptions::BadRequest,
+                "#{extra_keys.join(', ')} are not valid inputs"
+        end
+
         args.transform_keys { |k| "where[#{k}]" }
       end
 
@@ -168,15 +174,17 @@ module PlanningCenter
       {
         data: {
           type: model_name.element.camelize,
-          attributes: reject_immutable(attributes)
+          attributes: attribute_fields(attributes)
         }
       }
     end
 
-    def reject_immutable(attributes = {})
-      attributes.reject do |k|
-        self.class::IMMUTABLE_FIELDS.include?(k.to_sym)
-      end
+    def attribute_fields(attributes = {})
+      attributes.select { |k| field_list.include?(k.to_sym) }
+    end
+
+    def field_list
+      persisted? ? self.class::UPDATABLE_FIELDS : self.class::CREATABLE_FIELDS
     end
 
     def persisted?

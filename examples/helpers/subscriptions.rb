@@ -14,5 +14,6 @@ def subscription_columns
     name
     url
     active
+    application_id
   ]
 end

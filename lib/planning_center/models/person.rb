@@ -54,6 +54,10 @@ module PlanningCenter
 
     validates :first_name, :last_name, presence: true
 
+    def self.base_endpoint
+      'people/v2/people'
+    end
+
     def field_data(params = {})
       params = {
         where: params.map { |k, v| "where[#{k}]=#{v}" },
