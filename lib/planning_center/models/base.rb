@@ -26,9 +26,14 @@ module PlanningCenter
       super()
 
       @persisted = false
+      filter_attributes(attributes)
       assign_attributes(attributes) if attributes
       @client = client
       yield self if block_given?
+    end
+
+    def filter_attributes(attributes)
+      attributes.select! { |k| self.class::FIELDS.include?(k.to_sym) }
     end
 
     class << self

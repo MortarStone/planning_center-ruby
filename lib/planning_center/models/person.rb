@@ -1,46 +1,18 @@
 # frozen_string_literal: true
 
+# READ ONLY - There is no need to implement create, delete, update or save
+# methods for people. It is a little dangerous, and unnecessary for our purposes.
+
 module PlanningCenter
   class Person < Base
-    IMMUTABLE_FIELDS = %i[id can_create_forms created_at demographic_avatar_url
-                          directory_status name passed_background_check school_type
-                          updated_at can_email_lists].freeze
-    FIELDS = %i[accounting_administrator anniversary avatar birthdate child
-                first_name gender given_name grade graduation_year inactivated_at
-                last_name medical_notes membership middle_name nickname
-                people_permissions primary_campus_id remote_id site_administrator
-                status].freeze
+    FIELDS = %i[id first_name last_name status created_at updated_at].freeze
+    QUERIABLE_FIELDS = %i[first_name last_name status created_at updated_at].freeze
 
     attribute :id, :integer
-    attribute :accounting_administrator, :boolean
-    attribute :anniversary, :date
-    attribute :avatar, :string
-    attribute :birthdate, :date
-    attribute :can_create_forms, :boolean
-    attribute :can_email_lists, :boolean
-    attribute :child, :boolean
-    attribute :created_at, :datetime
-    attribute :demographic_avatar_url, :string
-    attribute :directory_status, :string
     attribute :first_name, :string
-    attribute :gender, :string
-    attribute :given_name, :string
-    attribute :grade, :string
-    attribute :graduation_year, :integer
-    attribute :inactivated_at, :datetime
     attribute :last_name, :string
-    attribute :medical_notes, :string
-    attribute :membership, :string
-    attribute :middle_name, :string
-    attribute :name, :string
-    attribute :nickname, :string
-    attribute :passed_background_check, :boolean
-    attribute :people_permissions, :string
-    attribute :primary_campus_id, :integer
-    attribute :remote_id, :big_integer
-    attribute :school_type, :string
-    attribute :site_administrator, :boolean
     attribute :status, :string
+    attribute :created_at, :datetime
     attribute :updated_at, :datetime
 
     FIELDS.each do |attr|
@@ -53,6 +25,26 @@ module PlanningCenter
     define_attribute_methods(*FIELDS)
 
     validates :first_name, :last_name, presence: true
+
+    def self.create
+      raise NoMethodError, "The 'create' method is undefined for this model"
+    end
+
+    def self.update
+      raise NoMethodError, "The 'update' method is undefined for this model"
+    end
+
+    def update
+      raise NoMethodError, "The 'update' method is undefined for this model"
+    end
+
+    def delete
+      raise NoMethodError, "The 'delete' method is undefined for this model"
+    end
+
+    def save
+      raise NoMethodError, "The 'save' method is undefined for this model"
+    end
 
     def self.base_endpoint
       'people/v2/people'
