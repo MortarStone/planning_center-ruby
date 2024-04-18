@@ -2,8 +2,10 @@
 
 module PlanningCenter
   class FieldOption < Base
-    IMMUTABLE_FIELDS = %i[id field_definition_id].freeze
-    FIELDS = %i[value sequence].freeze
+    FIELDS = %i[id value sequence field_definition_id].freeze
+    CREATABLE_FIELDS = %i[value sequence].freeze
+    UPDATABLE_FIELDS = %i[value sequence].freeze
+    QUERIABLE_FIELDS = %i[value sequence].freeze
 
     attribute :id, :integer
     attribute :value, :string
@@ -21,38 +23,36 @@ module PlanningCenter
 
     validates :value, presence: true
 
-    # belongs_to :field_definition
-
     class << self
       attr_accessor :field_definition_id
+    end
 
-      def all(field_definition_id:)
-        self.field_definition_id = field_definition_id
+    def self.base_endpoint
+      "people/v2/field_definitions/#{field_definition_id}/field_options"
+    end
 
-        super()
-      end
+    def self.all(field_definition_id:, client: nil)
+      self.field_definition_id = field_definition_id
 
-      def where(field_definition_id:, **params)
-        self.field_definition_id = field_definition_id
+      super(client: client)
+    end
 
-        super(**params)
-      end
+    def self.where(field_definition_id:, client: nil, **params)
+      self.field_definition_id = field_definition_id
 
-      def find(id, field_definition_id:)
-        self.field_definition_id = field_definition_id
+      super(client: client, **params)
+    end
 
-        super(id)
-      end
+    def self.find(id, field_definition_id:, client: nil)
+      self.field_definition_id = field_definition_id
 
-      def create(field_definition_id:, **attributes, &block)
-        self.field_definition_id = field_definition_id
+      super(id, client: client)
+    end
 
-        super(attributes, &block)
-      end
+    def self.create(field_definition_id:, client: nil, **attributes, &block)
+      self.field_definition_id = field_definition_id
 
-      def base_endpoint
-        "people/v2/field_definitions/#{field_definition_id}/field_options"
-      end
+      super(client: client, **attributes, &block)
     end
 
     def field_definition

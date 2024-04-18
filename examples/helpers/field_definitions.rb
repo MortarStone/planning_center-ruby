@@ -15,5 +15,6 @@ def field_definition_columns
     data_type
     slug
     tab_id
+    config
   ]
 end

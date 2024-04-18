@@ -12,6 +12,7 @@ def field_datum_columns
   %w[
     id
     value
-    file
+    person_id
+    field_definition_id
   ]
 end

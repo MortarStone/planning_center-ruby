@@ -72,7 +72,7 @@ module PlanningCenter
         "#{error['title']}:",
         error.fetch('meta', {})['resource'],
         error.fetch('source', {})['parameter'],
-        error['response.body']
+        error['detail']
       ].compact.join(' ')
     end
   end
