@@ -13,6 +13,8 @@ module PlanningCenter
     include PlanningCenter::Endpoints::FieldDefinitions
     include PlanningCenter::Endpoints::FieldOptions
     include PlanningCenter::Endpoints::Funds
+    include PlanningCenter::Endpoints::Groups
+    include PlanningCenter::Endpoints::GroupTypes
     include PlanningCenter::Endpoints::Households
     include PlanningCenter::Endpoints::InactiveReasons
     include PlanningCenter::Endpoints::MaritalStatuses
