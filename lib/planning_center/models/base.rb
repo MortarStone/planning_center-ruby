@@ -74,10 +74,19 @@ module PlanningCenter
         extra_keys = args.keys - self::QUERIABLE_FIELDS
         if extra_keys.present?
           raise PlanningCenter::Exceptions::BadRequest,
-                "#{extra_keys.join(', ')} are not valid inputs"
+                bad_request_message(extra_keys)
         end
 
         args.transform_keys { |k| "where[#{k}]" }
+      end
+
+      def bad_request_message(keys)
+        str = keys.map { |k| "'#{k}'" }.join(', ')
+        if keys.count > 1
+          "#{str} are not valid inputs"
+        else
+          "#{str} is not a valid input"
+        end
       end
 
       def find(id, client: nil)

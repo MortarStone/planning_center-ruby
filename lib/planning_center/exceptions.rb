@@ -1,96 +1,39 @@
 # frozen_string_literal: true
 
-# Essentially copied from https://github.com/planningcenter/pco_api_ruby/blob/master/lib/pco/api/errors.rb
-
 module PlanningCenter
   module Exceptions
-    class AuthRequiredError < StandardError; end
+    class PCStandardError < StandardError; end
 
-    class BaseError < StandardError
-      attr_reader :status, :detail, :headers
+    class AuthRequiredError < PCStandardError; end
 
-      def initialize(response)
-        super
-        @status = response.status
-        @detail = response.body
-        @headers = response.headers
-      end
+    # 400..499
+    class ClientError < PCStandardError; end
 
-      def to_s
-        message
-      end
+    # 400
+    class BadRequest < PCStandardError; end
 
-      def message
-        return detail.to_s unless detail.is_a?(Hash)
+    # 401
+    class Unauthorized < PCStandardError; end
 
-        detail['message'] || validation_message || detail.to_s
-      end
+    # 403
+    class Forbidden < PCStandardError; end
 
-      def inspect
-        "<#{self.class.name} status=#{status} message=#{message.inspect} detail=#{detail.inspect}>"
-      end
+    # 404
+    class NotFound < PCStandardError; end
 
-      private
+    # 405
+    class MethodNotAllowed < PCStandardError; end
 
-      def validation_message
-        return if Array(detail['errors']).empty?
+    # 422
+    class UnprocessableEntity < PCStandardError; end
 
-        errors = detail['errors'].map do |error|
-          error_to_string(error)
-        end
-        errors.uniq.join('; ')
-      end
+    # 429
+    class TooManyRequests < PCStandardError; end
 
-      def error_to_string(error)
-        return unless error.is_a?(Hash)
+    # 500..599
+    class ServerError < PCStandardError; end
 
-        [
-          "#{error['title']}:",
-          error.fetch('meta', {})['resource'],
-          error.fetch('source', {})['parameter'],
-          error['detail']
-        ].compact.join(' ')
-      end
-    end
-
-    class ClientError < BaseError
-      # 400..499
-    end
-
-    class BadRequest < ClientError
-      # 400
-    end
-
-    class Unauthorized < ClientError
-      # 401
-    end
-
-    class Forbidden < ClientError
-      # 403
-    end
-
-    class NotFound < ClientError
-      # 404
-    end
-
-    class MethodNotAllowed < ClientError
-      # 405
-    end
-
-    class UnprocessableEntity < ClientError
-      # 422
-    end
-
-    class TooManyRequests < ClientError
-      # 429
-    end
-
-    class ServerError < BaseError
-      # 500..599
-    end
-
-    class InternalServerError < ServerError
-      # 500
-    end
+    # 500
+    class InternalServerError < PCStandardError; end
   end
 end
