@@ -41,7 +41,7 @@ module PlanningCenter
       end
 
       def paginated_requests(client: nil, params: {})
-        # client ||= RockRms.configuration.client.connect
+        client ||= PlanningCenter.configuration.client
 
         offset = 0
         results = []
@@ -90,7 +90,7 @@ module PlanningCenter
       end
 
       def find(id, client: nil)
-        # client ||= RockRms.configuration.client.connect
+        client ||= PlanningCenter.configuration.client
 
         response = client.get("#{base_endpoint}/#{id}")['data']
         attrs = format_response(response)
@@ -102,7 +102,7 @@ module PlanningCenter
         if attributes.is_a? Array
           attributes.collect { |attr| create attr, client: client, &block }
         else
-          # client ||= RockRms.configuration.client.connect
+          client ||= PlanningCenter.configuration.client
 
           object = new attributes, client: client
           yield object if block_given?
@@ -112,7 +112,7 @@ module PlanningCenter
       end
 
       def update(id, client: nil, **attributes)
-        # client ||= RockRms.configuration.client.connect
+        client ||= PlanningCenter.configuration.client
 
         object = find(id, client: client)
         object.update(attributes)
