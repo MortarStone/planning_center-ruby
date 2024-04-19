@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.planningcenteronline.com/groups/v2/groups/779944?offset=0&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer c02980f27bfdb5ae0804adabe9d5d245f00a37beb29f90f8e31686335fb91e8e
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 18 Apr 2024 20:49:49 GMT
+      content-type:
+      - application/vnd.api+json; charset=utf-8
+      content-length:
+      - '2174'
+      connection:
+      - keep-alive
+      server:
+      - openresty
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - '0'
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - no-referrer-when-downgrade
+      x-pco-api-auth-method:
+      - OAuth2
+      x-pco-api-request-rate-count:
+      - '8'
+      x-pco-api-request-rate-limit:
+      - '100'
+      x-pco-api-request-rate-period:
+      - '20'
+      x-pco-api-processor:
+      - ENG_6.3.4
+      access-control-allow-credentials:
+      - 'true'
+      access-control-expose-headers:
+      - ETag, Link, X-PCO-API-Auth-Method, X-PCO-API-Request-Rate-Count, X-PCO-API-Request-Rate-Limit,
+        X-PCO-API-Request-Rate-Period, Retry-After
+      access-control-allow-headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since, Origin, X-Requested-With, X-CSRF-Token, X-PCO-API-Version,
+        X-PCO-API-Log-Level, X-PCO-API-Tracer-Class, X-PCO-API-Tracer-Secret
+      access-control-allow-methods:
+      - GET, POST, PATCH, PUT, DELETE, OPTIONS
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      x-pco-api-processed-as-version:
+      - '2018-08-01'
+      etag:
+      - W/"0c49697b1871a454e2e6de01ae9db239"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - e2d907f5-71ea-49a1-be16-4b1e608b0867
+      x-runtime:
+      - '0.030850'
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"Group","id":"779944","attributes":{"archived_at":null,"contact_email":"smallgroups@samplechurch.com","created_at":"2019-06-11T18:31:44Z","description":"We''re
+        a family-friendly group that meets most Tuesday nights. If you have           kids,
+        bring them along! Childcare is provided at our meetings (please chip in $5
+        per child).           We start at 7pm and go until 8:30pm.","enrollment_open":true,"enrollment_strategy":"request_to_join","events_visibility":"public","header_image":{"thumbnail":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/thumbnail_4.png","medium":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/medium_4.png","original":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/4.png"},"location_type_preference":"physical","memberships_count":0,"name":"Johnson
+        Family Small Group","public_church_center_web_url":"https://mortarstone.churchcenter.com/groups/small-groups/johnson-family-small-group","schedule":"Every
+        Tuesday night during the summer.","virtual_location_url":null},"relationships":{"group_type":{"data":{"type":"GroupType","id":"120399"}},"location":{"data":{"type":"Location","id":"385108"}}},"links":{"enrollment":"https://api.planningcenteronline.com/groups/v2/groups/779944/enrollment","events":"https://api.planningcenteronline.com/groups/v2/groups/779944/events","group_type":"https://api.planningcenteronline.com/groups/v2/group_types/120399","location":"https://api.planningcenteronline.com/groups/v2/locations/385108","memberships":"https://api.planningcenteronline.com/groups/v2/groups/779944/memberships","people":"https://api.planningcenteronline.com/groups/v2/groups/779944/people","resources":"https://api.planningcenteronline.com/groups/v2/groups/779944/resources","tags":"https://api.planningcenteronline.com/groups/v2/groups/779944/tags","self":"https://api.planningcenteronline.com/groups/v2/groups/779944","html":"https://groups.planningcenteronline.com/groups/779944"}},"included":[],"meta":{"onboarding":false,"can_include":["enrollment","group_type","location"],"parent":{"id":"291419","type":"Organization"}}}'
+  recorded_at: Thu, 18 Apr 2024 20:49:49 GMT
+recorded_with: VCR 6.0.0
