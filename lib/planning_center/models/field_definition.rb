@@ -2,11 +2,16 @@
 
 module PlanningCenter
   class FieldDefinition < Base
-    IMMUTABLE_FIELDS = %i[id tab_id].freeze
-    FIELDS = %i[config data_type deleted_at name sequence slug].freeze
+    FIELDS = %i[id tab_id config data_type deleted_at name sequence slug].freeze
+    CREATABLE_FIELDS = %i[data_type name sequence slug config deleted_at].freeze
+    UPDATABLE_FIELDS = %i[data_type name sequence slug config deleted_at].freeze
+    QUERIABLE_FIELDS = %i[
+      config data_type deleted_at name sequence slug tab_id
+    ].freeze
 
-    DATA_TYPES = %w[text string date file boolean
-                    select checkboxes number header].freeze
+    DATA_TYPES = %w[
+      text string date file boolean select checkboxes number header
+    ].freeze
 
     attribute :id, :integer
     attribute :config, :string
@@ -29,7 +34,9 @@ module PlanningCenter
     validates :name, :tab_id, presence: true
     validates :data_type, inclusion: { in: DATA_TYPES }, presence: true
 
-    # belongs_to :tab
+    def self.base_endpoint
+      'people/v2/field_definitions'
+    end
 
     def tab
       Tab.find(tab_id)

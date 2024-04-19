@@ -2,8 +2,10 @@
 
 module PlanningCenter
   class Tab < Base
-    IMMUTABLE_FIELDS = %i[id slug].freeze
-    FIELDS = %i[name sequence].freeze
+    FIELDS = %i[id slug name sequence].freeze
+    CREATABLE_FIELDS = %i[name sequence].freeze
+    UPDATABLE_FIELDS = %i[name sequence].freeze
+    QUERIABLE_FIELDS = %i[name sequence slug].freeze
 
     attribute :id, :integer
     attribute :name, :string
@@ -20,5 +22,9 @@ module PlanningCenter
     define_attribute_methods(*FIELDS)
 
     validates :name, presence: true
+
+    def self.base_endpoint
+      'people/v2/tabs'
+    end
   end
 end

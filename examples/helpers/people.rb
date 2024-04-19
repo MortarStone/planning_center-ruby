@@ -13,5 +13,6 @@ def person_columns
     id
     first_name
     last_name
+    status
   ]
 end

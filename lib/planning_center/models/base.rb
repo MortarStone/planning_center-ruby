@@ -8,9 +8,7 @@ module PlanningCenter
 
     extend Enumerable
 
-    class_attribute :client
-
-    attr_accessor :persisted
+    attr_accessor :persisted, :client
 
     attribute_method_suffix '?'
 
@@ -24,72 +22,119 @@ module PlanningCenter
 
     delegate :base_endpoint, :format_response, to: :class
 
-    def initialize(attributes = nil)
+    def initialize(attributes = nil, client: nil)
       super()
 
       @persisted = false
+      filter_attributes(attributes)
       assign_attributes(attributes) if attributes
+      @client = client
       yield self if block_given?
     end
 
+    def filter_attributes(attributes)
+      attributes.select! { |k| self.class::FIELDS.include?(k.to_sym) }
+    end
+
     class << self
-      def client
-        @client = PlanningCenter::Client.new(
-          access_token: PlanningCenter.configuration.access_token
+      def page_size
+        100
+      end
+
+      def all(client: nil)
+        paginated_requests(client: client)
+      end
+
+      def paginated_requests(client: nil, params: {})
+        client ||= PlanningCenter.configuration.client
+
+        offset = 0
+        results = []
+        loop do
+          response = client.get(
+            base_endpoint,
+            params.merge(offset: offset, per_page: page_size)
+          )
+          break if response.empty? || response['data'].empty?
+
+          response['data'].map do |hsh|
+            attrs = format_response(hsh)
+            results << new(attrs, client: client, &:persist!)
+          end
+
+          offset += page_size
+          break if response['data'].count < page_size
+        end
+        results
+      end
+
+      def where(client: nil, **params)
+        paginated_requests(
+          client: client,
+          params: format_parameters(params)
         )
       end
 
-      def where(include: [], **params)
-        params = { where: params, include: include }
-        response = client.get(base_endpoint, params)['data']
+      def format_parameters(args)
+        extra_keys = args.keys - self::QUERIABLE_FIELDS
+        if extra_keys.present?
+          raise PlanningCenter::Exceptions::BadRequest,
+                bad_request_message(extra_keys)
+        end
 
-        response.map do |hsh|
-          attrs = format_response(hsh)
-          new attrs, &:persist!
+        args.transform_keys { |k| "where[#{k}]" }
+      end
+
+      def bad_request_message(keys)
+        str = keys.map { |k| "'#{k}'" }.join(', ')
+        if keys.count > 1
+          "#{str} are not valid inputs"
+        else
+          "#{str} is not a valid input"
         end
       end
 
-      def find(id)
-        return if id.nil?
+      def find(id, client: nil)
+        client ||= PlanningCenter.configuration.client
 
         response = client.get("#{base_endpoint}/#{id}")['data']
         attrs = format_response(response)
 
-        new attrs, &:persist!
+        new attrs, client: client, &:persist!
       end
 
-      def create(attributes = nil, &block)
+      def create(client: nil, **attributes, &block)
         if attributes.is_a? Array
-          attributes.collect { |attr| create attr, &block }
+          attributes.collect { |attr| create attr, client: client, &block }
         else
-          object = new attributes
+          client ||= PlanningCenter.configuration.client
+
+          object = new attributes, client: client
           yield object if block_given?
           object.save
           object
         end
       end
 
-      def update(id, attributes)
-        object = find(id)
+      def update(id, client: nil, **attributes)
+        client ||= PlanningCenter.configuration.client
+
+        object = find(id, client: client)
         object.update(attributes)
         object
       end
 
-      def all
-        response = client.get(base_endpoint)['data']
-
-        response.map do |hsh|
-          attrs = format_response(hsh)
-          new attrs, &:persist!
-        end
+      def find_or_create_by(client: nil, **attributes, &block)
+        find_by(client: client, **attributes) ||
+          create(client: client, **attributes, &block)
       end
 
-      def each(&block)
-        all.each(&block)
+      def find_by(client: nil, **args)
+        where(client: client, **args)&.first
       end
 
-      def base_endpoint
-        "people/v2/#{model_name.element.pluralize}"
+      def each(client: nil, &block)
+        all(client: client).each(&block)
       end
 
       def format_response(response)
@@ -97,10 +142,8 @@ module PlanningCenter
 
         response['relationships']&.each do |_k, v|
           attr = "#{v.dig('data', 'type')&.underscore}_id"
-
           hsh[attr] = v.dig('data', 'id') if attribute_names.include? attr
         end
-
         hsh
       end
     end
@@ -126,15 +169,16 @@ module PlanningCenter
       run_callbacks :save do
         return false unless valid?
 
-        body = format_body(attributes.slice(*self.class::FIELDS))
+        body = format_body(attributes)
 
-        response = if persisted?
-                     client.patch(endpoint, body)['data']
-                   else
-                     client.post(endpoint, body)['data']
-                   end
+        response =
+          if persisted?
+            client.patch(endpoint, body)
+          else
+            client.post(endpoint, body)
+          end
 
-        assign_attributes(format_response(response))
+        assign_attributes(format_response(response['data']))
 
         true
       end
@@ -144,9 +188,17 @@ module PlanningCenter
       {
         data: {
           type: model_name.element.camelize,
-          attributes: attributes
+          attributes: attribute_fields(attributes)
         }
       }
+    end
+
+    def attribute_fields(attributes = {})
+      attributes.select { |k| field_list.include?(k.to_sym) }
+    end
+
+    def field_list
+      persisted? ? self.class::UPDATABLE_FIELDS : self.class::CREATABLE_FIELDS
     end
 
     def persisted?
@@ -163,26 +215,7 @@ module PlanningCenter
     end
 
     def endpoint
-      if persisted?
-        "#{base_endpoint}/#{id}"
-      else
-        base_endpoint
-      end
-    end
-
-    def pretty_print(pp)
-      pp.object_address_group self do
-        pp.breakable
-
-        *head, tail = attributes.to_a
-
-        head.each do |attr, value|
-          pp.text "#{attr}: #{value.inspect}"
-          pp.comma_breakable
-        end
-
-        pp.text "#{tail.first}: #{tail.last.inspect}"
-      end
+      persisted? ? "#{base_endpoint}/#{id}" : base_endpoint
     end
   end
 end

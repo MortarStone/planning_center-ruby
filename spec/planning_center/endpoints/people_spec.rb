@@ -61,12 +61,12 @@ RSpec.describe PlanningCenter::Endpoints::People do
 
   describe '#person', :vcr do
     before do
-      @person = client.person(2_669_139)
+      @person = client.person(118_193_121)
     end
 
     it 'returns a person object' do
       expect(@person).to be_a(Hash)
-      expect(@person['data']['id']).to eq('2669139')
+      expect(@person['data']['id']).to eq('118193121')
     end
   end
 end

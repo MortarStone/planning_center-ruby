@@ -2,32 +2,30 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.planningcenteronline.com/people/v2/people/2669139?offset=0&per_page=100
+    uri: https://api.planningcenteronline.com/people/v2/people/118193121?offset=0&per_page=100
     body:
-      encoding: UTF-8
-      string: "{}"
+      encoding: US-ASCII
+      string: ''
     headers:
       User-Agent:
       - Faraday v2.2.0
       Authorization:
-      - Bearer 05d1086ca67c08f2e006c767f3893f6c57284b3a0acf299e4d1affc759778c37
-      Content-Type:
-      - application/json
+      - Bearer 14d66aa5428304ed3b08dbea9c8482698695a05f3c58ed197ed05e9f4d3046d2
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Fri, 08 Apr 2022 18:49:11 GMT
+      - Thu, 18 Apr 2024 21:00:23 GMT
       content-type:
       - application/vnd.api+json; charset=utf-8
-      transfer-encoding:
-      - chunked
+      content-length:
+      - '3264'
       connection:
-      - close
+      - keep-alive
       server:
-      - nginx
+      - openresty
       x-frame-options:
       - SAMEORIGIN
       x-xss-protection:
@@ -43,13 +41,13 @@ http_interactions:
       x-pco-api-auth-method:
       - OAuth2
       x-pco-api-request-rate-count:
-      - '17'
+      - '7'
       x-pco-api-request-rate-limit:
       - '100'
       x-pco-api-request-rate-period:
       - '20'
       x-pco-api-processor:
-      - ENG_4.7.0
+      - ENG_6.3.0
       access-control-allow-credentials:
       - 'true'
       access-control-expose-headers:
@@ -64,22 +62,22 @@ http_interactions:
       access-control-allow-origin:
       - "*"
       vary:
-      - Accept, Accept-Encoding, Origin
+      - Accept
       x-pco-api-processed-as-version:
-      - '2022-01-28'
+      - '2023-03-21'
       etag:
-      - W/"ad11f595adb6ee761f4d9027a959f34c"
+      - W/"e5daebf7fff44b20f484287fa9ef753f"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 8cae46d8-06b1-49d7-adee-88ff58576c82
+      - 83d2ebc3-ec1e-410f-9adb-52e4b3fc69f4
       x-runtime:
-      - '0.040289'
+      - '0.054974'
       strict-transport-security:
-      - max-age=31536000; includeSubDomains
+      - max-age=63072000; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"data":{"type":"Person","id":"2669139","attributes":{"accounting_administrator":false,"anniversary":null,"avatar":"https://avatars.planningcenteronline.com/uploads/initials/GC.png","birthdate":"1987-06-20","can_create_forms":false,"child":false,"created_at":"2012-10-26T04:55:00Z","demographic_avatar_url":"https://avatars.planningcenteronline.com/uploads/initials/GC.png","directory_status":"no_access","first_name":"Gretchen","gender":"F","given_name":null,"grade":null,"graduation_year":null,"inactivated_at":null,"last_name":"Chan","medical_notes":null,"membership":"Covenant
-        Member","middle_name":null,"name":"Gretchen Chan","nickname":null,"passed_background_check":false,"people_permissions":null,"remote_id":null,"school_type":null,"site_administrator":false,"status":"active","updated_at":"2020-10-07T18:45:50Z"},"relationships":{"primary_campus":{"data":null}},"links":{"":"https://api.planningcenteronline.com/people/v2/people/2669139/","addresses":"https://api.planningcenteronline.com/people/v2/people/2669139/addresses","apps":"https://api.planningcenteronline.com/people/v2/people/2669139/apps","connected_people":"https://api.planningcenteronline.com/people/v2/people/2669139/connected_people","emails":"https://api.planningcenteronline.com/people/v2/people/2669139/emails","field_data":"https://api.planningcenteronline.com/people/v2/people/2669139/field_data","household_memberships":"https://api.planningcenteronline.com/people/v2/people/2669139/household_memberships","households":"https://api.planningcenteronline.com/people/v2/people/2669139/households","inactive_reason":null,"marital_status":"https://api.planningcenteronline.com/people/v2/marital_statuses/296943","message_groups":"https://api.planningcenteronline.com/people/v2/people/2669139/message_groups","messages":"https://api.planningcenteronline.com/people/v2/people/2669139/messages","name_prefix":null,"name_suffix":null,"notes":"https://api.planningcenteronline.com/people/v2/people/2669139/notes","organization":"https://api.planningcenteronline.com/people/v2/people/2669139/organization","person_apps":"https://api.planningcenteronline.com/people/v2/people/2669139/person_apps","phone_numbers":"https://api.planningcenteronline.com/people/v2/people/2669139/phone_numbers","platform_notifications":"https://api.planningcenteronline.com/people/v2/people/2669139/platform_notifications","primary_campus":null,"school":null,"social_profiles":"https://api.planningcenteronline.com/people/v2/people/2669139/social_profiles","workflow_cards":"https://api.planningcenteronline.com/people/v2/people/2669139/workflow_cards","workflow_shares":"https://api.planningcenteronline.com/people/v2/people/2669139/workflow_shares","self":"https://api.planningcenteronline.com/people/v2/people/2669139"}},"included":[],"meta":{"can_include":["addresses","emails","field_data","households","inactive_reason","marital_status","name_prefix","name_suffix","organization","person_apps","phone_numbers","platform_notifications","primary_campus","school","social_profiles"],"parent":{"id":"86977","type":"Organization"}}}'
-  recorded_at: Fri, 08 Apr 2022 18:49:11 GMT
+      string: '{"data":{"type":"Person","id":"118193121","attributes":{"accounting_administrator":false,"anniversary":null,"avatar":"https://avatars.planningcenteronline.com/uploads/initials/MC.png","birthdate":null,"can_create_forms":false,"can_email_lists":false,"child":false,"created_at":"2022-11-30T23:31:16Z","demographic_avatar_url":"https://avatars.planningcenteronline.com/uploads/initials/MC.png","directory_status":"no_access","first_name":"Michael","gender":null,"given_name":null,"grade":null,"graduation_year":null,"inactivated_at":null,"last_name":"Champagne","medical_notes":null,"membership":null,"middle_name":null,"name":"Michael
+        Champagne","nickname":null,"passed_background_check":false,"people_permissions":null,"remote_id":null,"school_type":null,"site_administrator":false,"status":"active","updated_at":"2024-04-18T17:32:37Z"},"relationships":{"primary_campus":{"data":null},"gender":{"data":null}},"links":{"":"https://api.planningcenteronline.com/people/v2/people/118193121/","addresses":"https://api.planningcenteronline.com/people/v2/people/118193121/addresses","apps":"https://api.planningcenteronline.com/people/v2/people/118193121/apps","background_checks":"https://api.planningcenteronline.com/people/v2/people/118193121/background_checks","connected_people":"https://api.planningcenteronline.com/people/v2/people/118193121/connected_people","emails":"https://api.planningcenteronline.com/people/v2/people/118193121/emails","field_data":"https://api.planningcenteronline.com/people/v2/people/118193121/field_data","household_memberships":"https://api.planningcenteronline.com/people/v2/people/118193121/household_memberships","households":"https://api.planningcenteronline.com/people/v2/people/118193121/households","inactive_reason":null,"marital_status":null,"message_groups":"https://api.planningcenteronline.com/people/v2/people/118193121/message_groups","messages":"https://api.planningcenteronline.com/people/v2/people/118193121/messages","name_prefix":null,"name_suffix":null,"notes":"https://api.planningcenteronline.com/people/v2/people/118193121/notes","organization":"https://api.planningcenteronline.com/people/v2/people/118193121/organization","person_apps":"https://api.planningcenteronline.com/people/v2/people/118193121/person_apps","phone_numbers":"https://api.planningcenteronline.com/people/v2/people/118193121/phone_numbers","platform_notifications":"https://api.planningcenteronline.com/people/v2/people/118193121/platform_notifications","primary_campus":null,"school":null,"social_profiles":"https://api.planningcenteronline.com/people/v2/people/118193121/social_profiles","workflow_cards":"https://api.planningcenteronline.com/people/v2/people/118193121/workflow_cards","workflow_shares":"https://api.planningcenteronline.com/people/v2/people/118193121/workflow_shares","self":"https://api.planningcenteronline.com/people/v2/people/118193121","html":"https://people.planningcenteronline.com/people/AC118193121"}},"included":[],"meta":{"can_include":["addresses","emails","field_data","households","inactive_reason","marital_status","name_prefix","name_suffix","organization","person_apps","phone_numbers","platform_notifications","primary_campus","school","social_profiles"],"parent":{"id":"291419","type":"Organization"}}}'
+  recorded_at: Thu, 18 Apr 2024 21:00:23 GMT
 recorded_with: VCR 6.0.0

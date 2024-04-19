@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.planningcenteronline.com/groups/v2/groups?offset=0&per_page=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer c02980f27bfdb5ae0804adabe9d5d245f00a37beb29f90f8e31686335fb91e8e
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 18 Apr 2024 20:49:49 GMT
+      content-type:
+      - application/vnd.api+json; charset=utf-8
+      content-length:
+      - '7356'
+      connection:
+      - keep-alive
+      server:
+      - openresty
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - '0'
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - no-referrer-when-downgrade
+      x-pco-api-auth-method:
+      - OAuth2
+      x-pco-api-request-rate-count:
+      - '7'
+      x-pco-api-request-rate-limit:
+      - '100'
+      x-pco-api-request-rate-period:
+      - '20'
+      x-pco-api-processor:
+      - ENG_6.3.4
+      access-control-allow-credentials:
+      - 'true'
+      access-control-expose-headers:
+      - ETag, Link, X-PCO-API-Auth-Method, X-PCO-API-Request-Rate-Count, X-PCO-API-Request-Rate-Limit,
+        X-PCO-API-Request-Rate-Period, Retry-After
+      access-control-allow-headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since, Origin, X-Requested-With, X-CSRF-Token, X-PCO-API-Version,
+        X-PCO-API-Log-Level, X-PCO-API-Tracer-Class, X-PCO-API-Tracer-Secret
+      access-control-allow-methods:
+      - GET, POST, PATCH, PUT, DELETE, OPTIONS
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      x-pco-api-processed-as-version:
+      - '2018-08-01'
+      etag:
+      - W/"1e22e0d21fddbf84df38ebfffdeffd6b"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - f2fcf1ca-ddba-45e1-9dd2-4c1ba77edc82
+      x-runtime:
+      - '0.053643'
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"links":{"self":"https://api.planningcenteronline.com/groups/v2/groups?offset=0&per_page=5","next":"https://api.planningcenteronline.com/groups/v2/groups?offset=5&per_page=5"},"data":[{"type":"Group","id":"779944","attributes":{"archived_at":null,"contact_email":"smallgroups@samplechurch.com","created_at":"2019-06-11T18:31:44Z","description":"We''re
+        a family-friendly group that meets most Tuesday nights. If you have           kids,
+        bring them along! Childcare is provided at our meetings (please chip in $5
+        per child).           We start at 7pm and go until 8:30pm.","enrollment_open":true,"enrollment_strategy":"request_to_join","events_visibility":"public","header_image":{"thumbnail":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/thumbnail_4.png","medium":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/medium_4.png","original":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/4.png"},"location_type_preference":"physical","memberships_count":0,"name":"Johnson
+        Family Small Group","public_church_center_web_url":"https://mortarstone.churchcenter.com/groups/small-groups/johnson-family-small-group","schedule":"Every
+        Tuesday night during the summer.","virtual_location_url":null},"relationships":{"group_type":{"data":{"type":"GroupType","id":"120399"}},"location":{"data":{"type":"Location","id":"385108"}}},"links":{"self":"https://api.planningcenteronline.com/groups/v2/groups/779944","html":"https://groups.planningcenteronline.com/groups/779944"}},{"type":"Group","id":"779945","attributes":{"archived_at":null,"contact_email":"smallgroups@samplechurch.com","created_at":"2019-06-11T18:31:44Z","description":"We''re
+        a fun loving group that meets together, prays together, and supports           each
+        other. All ages welcome. We try to start at 7:30pm and end at 9pm. If it''s
+        a dinner           night, we all bring a dish and eat at 6:30pm.","enrollment_open":true,"enrollment_strategy":"request_to_join","events_visibility":"public","header_image":{"thumbnail":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/thumbnail_5.png","medium":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/medium_5.png","original":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/5.png"},"location_type_preference":"physical","memberships_count":0,"name":"Brault
+        Small Group","public_church_center_web_url":"https://mortarstone.churchcenter.com/groups/small-groups/brault-small-group","schedule":"Every
+        Wednesday night during the summer.","virtual_location_url":null},"relationships":{"group_type":{"data":{"type":"GroupType","id":"120399"}},"location":{"data":{"type":"Location","id":"385106"}}},"links":{"self":"https://api.planningcenteronline.com/groups/v2/groups/779945","html":"https://groups.planningcenteronline.com/groups/779945"}},{"type":"Group","id":"779946","attributes":{"archived_at":null,"contact_email":"smallgroups@samplechurch.com","created_at":"2019-06-11T18:31:44Z","description":"We
+        are a part small group, part book club group! Usually we read one book per           season.
+        This summer we''re reading through \"Mere Christianity\" by C.S. Lewis. Come
+        join           us! All ages welcome, though most of us are retirees!","enrollment_open":true,"enrollment_strategy":"request_to_join","events_visibility":"public","header_image":{"thumbnail":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/thumbnail_6.png","medium":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/medium_6.png","original":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/6.png"},"location_type_preference":"physical","memberships_count":0,"name":"Wozniak
+        Small Group","public_church_center_web_url":"https://mortarstone.churchcenter.com/groups/small-groups/wozniak-small-group","schedule":"Every
+        Friday night during the summer and spring.","virtual_location_url":null},"relationships":{"group_type":{"data":{"type":"GroupType","id":"120399"}},"location":{"data":{"type":"Location","id":"385107"}}},"links":{"self":"https://api.planningcenteronline.com/groups/v2/groups/779946","html":"https://groups.planningcenteronline.com/groups/779946"}},{"type":"Group","id":"779947","attributes":{"archived_at":null,"contact_email":"classes@samplechurch.com","created_at":"2019-06-11T18:31:44Z","description":"This
+        class is held weekly, during the first service hour on Sundays. Meet in the
+        church lobby to find a listing of all the classes and where they''re meeting
+        each week. If the group is closed it means we''re full this season, but don''t
+        worry – this class starts up again every 3 months.","enrollment_open":true,"enrollment_strategy":"request_to_join","events_visibility":"public","header_image":{"thumbnail":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/thumbnail_7.png","medium":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/medium_7.png","original":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/7.png"},"location_type_preference":"physical","memberships_count":0,"name":"Financial
+        Freedom","public_church_center_web_url":"https://mortarstone.churchcenter.com/groups/seasonal-classes/financial-freedom","schedule":"Every
+        Sunday at 9:30am","virtual_location_url":null},"relationships":{"group_type":{"data":{"type":"GroupType","id":"120400"}},"location":{"data":null}},"links":{"self":"https://api.planningcenteronline.com/groups/v2/groups/779947","html":"https://groups.planningcenteronline.com/groups/779947"}},{"type":"Group","id":"779948","attributes":{"archived_at":null,"contact_email":"classes@samplechurch.com","created_at":"2019-06-11T18:31:44Z","description":"This
+        class is held weekly, during the first service hour on Sundays. Meet in the
+        church lobby to find a listing of all the classes and where they''re meeting
+        each week. If the group is closed it means we''re full this season, but don''t
+        worry – this class starts up again every 3 months.","enrollment_open":true,"enrollment_strategy":"request_to_join","events_visibility":"public","header_image":{"thumbnail":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/thumbnail_8.png","medium":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/medium_8.png","original":"https://groups-production.s3.amazonaws.com/uploads/group/header_image/defaults/8.png"},"location_type_preference":"physical","memberships_count":0,"name":"Marriage
+        Enrichment","public_church_center_web_url":"https://mortarstone.churchcenter.com/groups/seasonal-classes/marriage-enrichment","schedule":"Every
+        Sunday at 9:30am","virtual_location_url":null},"relationships":{"group_type":{"data":{"type":"GroupType","id":"120400"}},"location":{"data":null}},"links":{"self":"https://api.planningcenteronline.com/groups/v2/groups/779948","html":"https://groups.planningcenteronline.com/groups/779948"}}],"included":[],"meta":{"onboarding":false,"total_count":9,"count":5,"next":{"offset":5},"can_order_by":["name"],"can_query_by":["archive_status","name"],"can_include":["enrollment","group_type","location"],"can_filter":["group","group_type","my_groups"],"parent":{"id":"291419","type":"Organization"}}}'
+  recorded_at: Thu, 18 Apr 2024 20:49:49 GMT
+recorded_with: VCR 6.0.0

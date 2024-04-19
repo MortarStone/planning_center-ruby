@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.planningcenteronline.com/groups/v2/group_types/120399?offset=0&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Authorization:
+      - Bearer c02980f27bfdb5ae0804adabe9d5d245f00a37beb29f90f8e31686335fb91e8e
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 18 Apr 2024 20:49:48 GMT
+      content-type:
+      - application/vnd.api+json; charset=utf-8
+      content-length:
+      - '938'
+      connection:
+      - keep-alive
+      server:
+      - openresty
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - '0'
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - no-referrer-when-downgrade
+      x-pco-api-auth-method:
+      - OAuth2
+      x-pco-api-request-rate-count:
+      - '4'
+      x-pco-api-request-rate-limit:
+      - '100'
+      x-pco-api-request-rate-period:
+      - '20'
+      x-pco-api-processor:
+      - ENG_6.3.4
+      access-control-allow-credentials:
+      - 'true'
+      access-control-expose-headers:
+      - ETag, Link, X-PCO-API-Auth-Method, X-PCO-API-Request-Rate-Count, X-PCO-API-Request-Rate-Limit,
+        X-PCO-API-Request-Rate-Period, Retry-After
+      access-control-allow-headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since, Origin, X-Requested-With, X-CSRF-Token, X-PCO-API-Version,
+        X-PCO-API-Log-Level, X-PCO-API-Tracer-Class, X-PCO-API-Tracer-Secret
+      access-control-allow-methods:
+      - GET, POST, PATCH, PUT, DELETE, OPTIONS
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      x-pco-api-processed-as-version:
+      - '2018-08-01'
+      etag:
+      - W/"69e1833f4ca8d7a266f781bc6e3c49eb"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - dc95a593-e489-48db-a57e-79fde22cba13
+      x-runtime:
+      - '0.035475'
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"data":{"type":"GroupType","id":"120399","attributes":{"church_center_map_visible":true,"church_center_visible":true,"color":"#4fd2e3","default_group_settings":{"contact_email":"smallgroups@samplechurch.com"},"description":"Small
+        groups are a key aspect of our church community.           Most meet weekly
+        in the home of a group member (usually the leader''s home).           We try
+        to keep them limited to about 12 people.           If you can''t find an open
+        group, please let us know!","name":"Small Groups","position":1},"links":{"events":"https://api.planningcenteronline.com/groups/v2/group_types/120399/events","groups":"https://api.planningcenteronline.com/groups/v2/group_types/120399/groups","resources":"https://api.planningcenteronline.com/groups/v2/group_types/120399/resources","self":"https://api.planningcenteronline.com/groups/v2/group_types/120399"}},"included":[],"meta":{"parent":{"id":"291419","type":"Organization"}}}'
+  recorded_at: Thu, 18 Apr 2024 20:49:48 GMT
+recorded_with: VCR 6.0.0

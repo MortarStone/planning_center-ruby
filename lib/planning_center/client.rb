@@ -9,7 +9,12 @@ module PlanningCenter
     include PlanningCenter::Endpoints::DesignationRefunds
     include PlanningCenter::Endpoints::Donations
     include PlanningCenter::Endpoints::Emails
+    include PlanningCenter::Endpoints::FieldData
+    include PlanningCenter::Endpoints::FieldDefinitions
+    include PlanningCenter::Endpoints::FieldOptions
     include PlanningCenter::Endpoints::Funds
+    include PlanningCenter::Endpoints::Groups
+    include PlanningCenter::Endpoints::GroupTypes
     include PlanningCenter::Endpoints::Households
     include PlanningCenter::Endpoints::InactiveReasons
     include PlanningCenter::Endpoints::MaritalStatuses
@@ -21,7 +26,8 @@ module PlanningCenter
     include PlanningCenter::Endpoints::RecurringDonationDesignations
     include PlanningCenter::Endpoints::RecurringDonations
     include PlanningCenter::Endpoints::Refunds
-    include PlanningCenter::Endpoints::Webhooks
+    include PlanningCenter::Endpoints::Subscriptions
+    include PlanningCenter::Endpoints::Tabs
 
     attr_accessor :url
 
@@ -40,16 +46,15 @@ module PlanningCenter
     end
 
     def get(path, params = {})
-      path = RequestFormatter.new(path: path, params: params).call
-
-      request(path: path)
+      params = RequestFormatter.new(params: params).call
+      request(method: :get, path: path, params: params)
     end
 
-    def post(path, body = {})
+    def post(path, body = nil)
       request(method: :post, path: path, body: body)
     end
 
-    def patch(path, body = {})
+    def patch(path, body = nil)
       request(method: :patch, path: path, body: body)
     end
 
@@ -57,14 +62,16 @@ module PlanningCenter
       request(method: :delete, path: path)
     end
 
-    def request(path:, method: :get, body: {})
-      res = connection.public_send(method) do |req|
-        req.url "#{url}/#{path}"
-        req.options.timeout = 300 # 5 minutes
-        req.body = body.to_json
+    def request(path:, method: :get, params: {}, body: nil)
+      response = connection.public_send(method) do |req|
+        req.url path
+        req.options.timeout = 60 # 1 minute
+        req.params = params
+        req.body = body
       end
+      # puts "#{method.upcase} #{response.env.url}\n\n"
 
-      ResponseHandler.new(response: res).call
+      ResponseHandler.new(response).call
     end
   end
 end
