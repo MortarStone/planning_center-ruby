@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Dir[File.join(__dir__, 'helpers', '*.rb')].each { |file| require file }
+Dir[File.join(__dir__, 'helpers', '*.rb')].sort.each { |file| require file }
 
 def print_list(object_name, pk_id_name, response)
   list = response.is_a?(Hash) ? response['data'] : response
