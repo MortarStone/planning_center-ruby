@@ -58,7 +58,7 @@ module PlanningCenter
 
       response.map do |hsh|
         attrs = FieldDatum.format_response(hsh)
-        FieldDatum.new attrs, &:persist!
+        FieldDatum.new(attrs, client: client, &:persist!)
       end
     end
   end
