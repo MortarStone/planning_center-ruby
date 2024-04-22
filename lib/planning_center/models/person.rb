@@ -50,12 +50,11 @@ module PlanningCenter
       'people/v2/people'
     end
 
-    def field_data(params = {})
-      params = {
-        where: params.map { |k, v| "where[#{k}]=#{v}" },
-        include: [:field_option]
-      }
-      response = client.get("people/v2/people/#{id}/field_data", params)['data']
+    def field_data(**params)
+      response = client.get(
+        "people/v2/people/#{id}/field_data",
+        { where: params, include: [:field_option] }
+      )['data']
 
       response.map do |hsh|
         attrs = FieldDatum.format_response(hsh)
