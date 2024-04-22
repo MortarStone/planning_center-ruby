@@ -76,13 +76,18 @@ module PlanningCenter
       end
 
       def format_parameters(args)
+        { include: args.delete(:include) }.merge(format_where_parameters(args))
+          &.reject { |_k, v| v.blank? }
+      end
+
+      def format_where_parameters(args)
         extra_keys = args.keys - self::QUERIABLE_FIELDS
         if extra_keys.present?
           raise PlanningCenter::Exceptions::BadRequest,
                 bad_request_message(extra_keys)
         end
 
-        args.transform_keys { |k| "where[#{k}]" }
+        { where: args }
       end
 
       def bad_request_message(keys)
