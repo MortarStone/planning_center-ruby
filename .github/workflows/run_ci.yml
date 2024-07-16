@@ -1,4 +1,5 @@
 env:
+  RUBY_VERSION: 3.2.2
   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 name: CI Build
@@ -18,7 +19,7 @@ jobs:
     name: Run RSpec
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.2
+      - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true

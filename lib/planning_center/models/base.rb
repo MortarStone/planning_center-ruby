@@ -77,7 +77,7 @@ module PlanningCenter
 
       def format_parameters(args)
         { include: args.delete(:include) }.merge(format_where_parameters(args))
-          &.reject { |_k, v| v.blank? }
+                                          &.reject { |_k, v| v.blank? }
       end
 
       def format_where_parameters(args)
@@ -145,7 +145,7 @@ module PlanningCenter
       def format_response(response)
         hsh = response['attributes'].merge(id: response['id'])
 
-        response['relationships']&.each do |_k, v|
+        response['relationships']&.each_value do |v|
           attr = "#{v.dig('data', 'type')&.underscore}_id"
           hsh[attr] = v.dig('data', 'id') if attribute_names.include? attr
         end
