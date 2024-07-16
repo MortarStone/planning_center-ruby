@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    planning_center (0.0.1)
+    planning_center (0.0.2)
       activemodel
       dotenv
       faraday (>= 1.0, < 2.0)
