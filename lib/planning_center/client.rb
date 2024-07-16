@@ -69,7 +69,7 @@ module PlanningCenter
         req.params = params
         req.body = body
       end
-      # puts "#{method.upcase} #{response.env.url} #{params}\n\n"
+      puts "#{method.upcase} #{response.env.url} #{params}\n\n"
 
       ResponseHandler.new(response).call
     end
