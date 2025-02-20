@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::Subscriptions do
 
   describe '#subscriptions', :vcr do
     before do
-      @subscriptions = client.subscriptions
+      @subscriptions = client.subscriptions.body
     end
 
     it 'returns an array' do

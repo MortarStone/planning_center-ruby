@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::Refunds do
 
   describe '#refund', :vcr do
     before do
-      @refund = client.refund(53_134_447)
+      @refund = client.refund(53_134_447).body
     end
 
     it 'returns a refund object' do

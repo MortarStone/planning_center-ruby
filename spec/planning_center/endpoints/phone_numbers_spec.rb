@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::PhoneNumbers do
 
   describe '#phone_numbers', :vcr do
     before do
-      @phone_numbers = client.phone_numbers(2_669_139)
+      @phone_numbers = client.phone_numbers(2_669_139).body
     end
 
     it 'returns an array' do
@@ -22,7 +22,7 @@ RSpec.describe PlanningCenter::Endpoints::PhoneNumbers do
 
   describe '#phone_number', :vcr do
     before do
-      @phone_number = client.phone_number(2_669_139, 60_503_519)
+      @phone_number = client.phone_number(2_669_139, 60_503_519).body
     end
 
     it 'returns a phone_number object' do

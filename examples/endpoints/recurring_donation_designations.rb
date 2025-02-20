@@ -2,5 +2,5 @@
 
 require_relative 'endpoint_helper'
 
-recurring_donation_designations = @client.recurring_donation_designations(358_916)
+recurring_donation_designations = @client.recurring_donation_designations(1_150_348)
 print_recurring_donation_designations(recurring_donation_designations)

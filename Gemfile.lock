@@ -4,7 +4,7 @@ PATH
     planning_center (0.0.2)
       activemodel
       dotenv
-      faraday (>= 1.0)
+      faraday (>= 1.0, < 2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -38,22 +38,38 @@ GEM
     drb (2.2.1)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
-    faraday (2.10.0)
-      faraday-net_http (>= 2.0, < 3.2)
-      logger
-    faraday-net_http (3.1.0)
-      net-http
+    faraday (1.10.4)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
+      faraday-excon (~> 1.1)
+      faraday-httpclient (~> 1.0)
+      faraday-multipart (~> 1.0)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.0)
+      faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
+      faraday-retry (~> 1.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
+    faraday-excon (1.1.0)
+    faraday-httpclient (1.0.1)
+    faraday-multipart (1.1.0)
+      multipart-post (~> 2.0)
+    faraday-net_http (1.0.2)
+    faraday-net_http_persistent (1.2.0)
+    faraday-patron (1.0.0)
+    faraday-rack (1.0.0)
+    faraday-retry (1.0.3)
     hashdiff (1.1.0)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
-    logger (1.6.0)
     method_source (1.1.0)
     minitest (5.24.1)
+    multipart-post (2.4.1)
     mutex_m (0.2.0)
-    net-http (0.4.1)
-      uri
     parallel (1.25.1)
     parser (3.3.4.0)
       ast (~> 2.4.1)
@@ -95,6 +111,7 @@ GEM
     rubocop-ast (1.31.3)
       parser (>= 3.3.1.0)
     ruby-progressbar (1.13.0)
+    ruby2_keywords (0.0.5)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -105,7 +122,6 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
-    uri (0.13.0)
     vcr (6.2.0)
     webmock (3.23.1)
       addressable (>= 2.8.0)
@@ -114,6 +130,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-24
   x86_64-darwin-19
   x86_64-darwin-20
   x86_64-darwin-21

@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::Addresses do
 
   describe '#addresses', :vcr do
     before do
-      @addresses = client.addresses(per_page: 25)
+      @addresses = client.addresses(per_page: 25).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::Addresses do
 
   describe '#address', :vcr do
     before do
-      @address = client.address(30_896_373)
+      @address = client.address(30_896_373).body
     end
 
     it 'returns a address object' do

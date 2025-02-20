@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::Funds do
 
   describe '#funds', :vcr do
     before do
-      @funds = client.funds(per_page: 25)
+      @funds = client.funds(per_page: 25).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::Funds do
 
   describe '#fund', :vcr do
     before do
-      @fund = client.fund(131_737)
+      @fund = client.fund(131_737).body
     end
 
     it 'returns a fund object' do

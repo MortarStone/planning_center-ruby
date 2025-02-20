@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::Groups do
 
   describe '#groups', :vcr do
     before do
-      @groups = client.groups(per_page: 5)
+      @groups = client.groups(per_page: 5).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::Groups do
 
   describe '#group', :vcr do
     before do
-      @group = client.group(779_944)
+      @group = client.group(779_944).body
     end
 
     it 'returns a group object' do

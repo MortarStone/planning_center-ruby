@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::NameSuffixes do
 
   describe '#name_suffixes', :vcr do
     before do
-      @name_suffixes = client.name_suffixes(per_page: 25)
+      @name_suffixes = client.name_suffixes(per_page: 25).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::NameSuffixes do
 
   describe '#name_suffix', :vcr do
     before do
-      @name_suffix = client.name_suffix(296_925)
+      @name_suffix = client.name_suffix(296_925).body
     end
 
     it 'returns a name_suffix object' do

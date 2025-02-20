@@ -55,15 +55,15 @@ module PlanningCenter
             base_endpoint,
             params.merge(offset: offset, per_page: page_size)
           )
-          break if response.empty? || response['data'].empty?
+          break if response.failure || response.empty?
 
-          response['data'].map do |hsh|
+          response.body['data'].map do |hsh|
             attrs = format_response(hsh)
             results << new(attrs, client: client, &:persist!)
           end
 
           offset += page_size
-          break if response['data'].count < page_size
+          break if response.body['data'].count < page_size
         end
         results
       end
@@ -102,8 +102,8 @@ module PlanningCenter
       def find(id, client: nil)
         client ||= PlanningCenter.configuration.client
 
-        response = client.get("#{base_endpoint}/#{id}")['data']
-        attrs = format_response(response)
+        response = client.get("#{base_endpoint}/#{id}")
+        attrs = format_response(response.body['data'])
 
         new attrs, client: client, &:persist!
       end
@@ -183,7 +183,7 @@ module PlanningCenter
             client.post(endpoint, body)
           end
 
-        assign_attributes(format_response(response['data']))
+        assign_attributes(format_response(response.body['data']))
 
         true
       end

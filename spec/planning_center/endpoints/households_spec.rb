@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::Households do
 
   describe '#households', :vcr do
     before do
-      @households = client.households(per_page: 25)
+      @households = client.households(per_page: 25).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::Households do
 
   describe '#household', :vcr do
     before do
-      @household = client.household(2_168_776)
+      @household = client.household(2_168_776).body
     end
 
     it 'returns a household object' do

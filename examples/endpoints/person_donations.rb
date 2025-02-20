@@ -2,5 +2,5 @@
 
 require_relative 'endpoint_helper'
 
-donations = @client.person_donations(10_444_578)
+donations = @client.person_donations(16_512_877, include: %w[designations])
 print_donations(donations)
