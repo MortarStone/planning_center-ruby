@@ -8,5 +8,4 @@ donations = @client.donations(
   # 'where[received_at][gt]' => '2023-06-01T12:00:00Z',
   'where[received_at][lt]' => '2023-06-02T12:00:00Z'
 )
-binding.pry
 print_donations(donations)
