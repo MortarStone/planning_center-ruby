@@ -2,78 +2,49 @@
 
 module PlanningCenter
   class ResponseHandler
-    attr_accessor :response
+    attr_accessor :http_response
 
-    def initialize(response)
-      @response = response
+    def initialize(http_response)
+      @http_response = http_response
     end
 
     def call
       handle_response
     end
 
+    def response
+      @response ||= Response.from_http_response(http_response)
+    end
+
     private
 
     def handle_response
-      case response.status
+      case response.code
       when 200..299
-        format_response
+        response
       when 400
-        raise PlanningCenter::Exceptions::BadRequest, error_message
+        raise PlanningCenter::Exceptions::BadRequest.new(response), response.error_message
       when 401
-        raise PlanningCenter::Exceptions::Unauthorized, error_message
+        raise PlanningCenter::Exceptions::Unauthorized.new(response), response.error_message
       when 403
-        raise PlanningCenter::Exceptions::Forbidden, error_message
+        raise PlanningCenter::Exceptions::Forbidden.new(response), response.error_message
       when 404
-        raise PlanningCenter::Exceptions::NotFound, error_message
+        raise PlanningCenter::Exceptions::NotFound.new(response), response.error_message
       when 405
-        raise PlanningCenter::Exceptions::MethodNotAllowed, error_message
+        raise PlanningCenter::Exceptions::MethodNotAllowed.new(response), response.error_message
       when 422
-        raise PlanningCenter::Exceptions::UnprocessableEntity, error_message
+        raise PlanningCenter::Exceptions::UnprocessableEntity.new(response), response.error_message
       when 429
-        raise PlanningCenter::Exceptions::TooManyRequests, error_message
+        raise PlanningCenter::Exceptions::TooManyRequests.new(response), response.error_message
       when 400..499
-        raise PlanningCenter::Exceptions::ClientError, error_message
+        raise PlanningCenter::Exceptions::ClientError.new(response), response.error_message
       when 500
-        raise PlanningCenter::Exceptions::InternalServerError, error_message
+        raise PlanningCenter::Exceptions::InternalServerError.new(response), response.error_message
       when 500..599
-        raise PlanningCenter::Exceptions::ServerError, error_message
+        raise PlanningCenter::Exceptions::ServerError.new(response), response.error_message
       else
-        raise PlanningCenter::Exceptions::PCStandardError, "unknown status #{response.status}"
+        raise PlanningCenter::Exceptions::PCStandardError.new(response), response.error_message
       end
-    end
-
-    def format_response
-      results = response.body
-      results['headers'] = response.headers unless results.blank?
-      results
-    end
-
-    # Methods for interpreting error messages largely taken from:
-    # https://github.com/planningcenter/pco_api_ruby/blob/master/lib/pco/api/errors.rb
-    def error_message
-      return response.body.to_s unless response.body.is_a?(Hash)
-
-      response.body['message'] || validation_message || response.body.to_s
-    end
-
-    def validation_message
-      return if response.body['errors'].empty?
-
-      response.body['errors'].each_with_object([]) do |error, arr|
-        arr << error_to_string(error)
-      end.uniq.join('; ')
-    end
-
-    def error_to_string(error)
-      return unless error.is_a?(Hash)
-
-      [
-        "#{error['title']}:",
-        error.fetch('meta', {})['resource'],
-        error.fetch('source', {})['parameter'],
-        error['detail']
-      ].compact.join(' ')
     end
   end
 end

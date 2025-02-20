@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::Donations do
 
   describe '#donations', :vcr do
     before do
-      @donations = client.donations(per_page: 25)
+      @donations = client.donations(per_page: 25).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::Donations do
 
   describe '#donation', :vcr do
     before do
-      @donation = client.donation(46_653_783)
+      @donation = client.donation(46_653_783).body
     end
 
     it 'returns a donation object' do

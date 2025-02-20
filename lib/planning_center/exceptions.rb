@@ -2,7 +2,14 @@
 
 module PlanningCenter
   module Exceptions
-    class PCStandardError < StandardError; end
+    class PCStandardError < StandardError
+      attr_reader :response
+
+      def initialize(response)
+        super
+        @response = response
+      end
+    end
 
     class AuthRequiredError < PCStandardError; end
 

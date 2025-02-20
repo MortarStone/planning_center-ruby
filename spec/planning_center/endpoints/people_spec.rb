@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::People do
 
   describe '#people', :vcr do
     before do
-      @people = client.people(per_page: 25)
+      @people = client.people(per_page: 25).body
     end
 
     it 'returns an array' do
@@ -37,7 +37,7 @@ RSpec.describe PlanningCenter::Endpoints::People do
           addresses
           name_suffix
         ]
-      )
+      ).body
     end
 
     it 'returns an array' do
@@ -61,7 +61,7 @@ RSpec.describe PlanningCenter::Endpoints::People do
 
   describe '#person', :vcr do
     before do
-      @person = client.person(118_193_121)
+      @person = client.person(118_193_121).body
     end
 
     it 'returns a person object' do

@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::MaritalStatuses do
 
   describe '#marital_statuses', :vcr do
     before do
-      @marital_statuses = client.marital_statuses(per_page: 25)
+      @marital_statuses = client.marital_statuses(per_page: 25).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::MaritalStatuses do
 
   describe '#marital_status', :vcr do
     before do
-      @marital_status = client.marital_status(296_943)
+      @marital_status = client.marital_status(296_943).body
     end
 
     it 'returns a marital_status object' do

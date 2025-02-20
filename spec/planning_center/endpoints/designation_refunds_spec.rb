@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::DesignationRefunds do
 
   describe '#designation_refunds', :vcr do
     before do
-      @designation_refunds = client.designation_refunds(53_134_447)
+      @designation_refunds = client.designation_refunds(53_134_447).body
     end
 
     it 'returns an array' do

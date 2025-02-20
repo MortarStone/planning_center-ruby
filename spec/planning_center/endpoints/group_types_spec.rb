@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::GroupTypes do
 
   describe '#group_types', :vcr do
     before do
-      @group_types = client.group_types(per_page: 3)
+      @group_types = client.group_types(per_page: 3).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::GroupTypes do
 
   describe '#group_type', :vcr do
     before do
-      @group_type = client.group_type(120_399)
+      @group_type = client.group_type(120_399).body
     end
 
     it 'returns a group_type object' do

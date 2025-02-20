@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::InactiveReasons do
 
   describe '#inactive_reasons', :vcr do
     before do
-      @inactive_reasons = client.inactive_reasons(per_page: 25)
+      @inactive_reasons = client.inactive_reasons(per_page: 25).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::InactiveReasons do
 
   describe '#inactive_reason', :vcr do
     before do
-      @inactive_reason = client.inactive_reason(296_937)
+      @inactive_reason = client.inactive_reason(296_937).body
     end
 
     it 'returns a inactive_reason object' do

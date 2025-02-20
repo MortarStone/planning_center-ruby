@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::Emails do
 
   describe '#emails', :vcr do
     before do
-      @emails = client.emails(per_page: 25)
+      @emails = client.emails(per_page: 25).body
     end
 
     it 'returns an array' do
@@ -26,7 +26,7 @@ RSpec.describe PlanningCenter::Endpoints::Emails do
 
   describe '#email', :vcr do
     before do
-      @email = client.email(2_515_990)
+      @email = client.email(2_515_990).body
     end
 
     it 'returns a email object' do

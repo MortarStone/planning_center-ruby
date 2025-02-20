@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::Campuses do
 
   describe '#campuses', :vcr do
     before do
-      @campuses = client.campuses
+      @campuses = client.campuses.body
     end
 
     it 'returns an array' do
@@ -22,7 +22,7 @@ RSpec.describe PlanningCenter::Endpoints::Campuses do
 
   describe '#campus', :vcr do
     before do
-      @campus = client.campus(44_710)
+      @campus = client.campus(44_710).body
     end
 
     it 'returns a campus object' do

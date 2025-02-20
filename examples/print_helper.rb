@@ -2,8 +2,13 @@
 
 Dir[File.join(__dir__, 'helpers', '*.rb')].sort.each { |file| require file }
 
-def print_list(object_name, pk_id_name, response)
-  list = response.is_a?(Hash) ? response['data'] : response
+def print_list(object_name, pk_id_name, response, hash_chain = [])
+  list = if response.is_a?(PlanningCenter::Response)
+           response.body&.dig(*hash_chain)
+         else
+           response
+         end
+
   if list.blank?
     puts 'Nothing found'
   else
@@ -44,8 +49,12 @@ def print_row(index, item, column_headers)
   puts cells.join(' :: ')
 end
 
-def print_item(object_name, response)
-  item = response.is_a?(Hash) ? response['data'] : response
+def print_item(object_name, response, hash_chain = [])
+  item = if response.is_a?(PlanningCenter::Response)
+           response.body&.dig(*hash_chain)
+         else
+           response
+         end
   puts
   if item.nil?
     puts 'Item not found'

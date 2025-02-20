@@ -2,5 +2,5 @@
 
 require_relative 'endpoint_helper'
 
-address = @client.address(30_896_373)
+address = @client.address(9_777_037)
 print_address(address)

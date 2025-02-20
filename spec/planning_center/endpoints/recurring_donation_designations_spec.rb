@@ -7,7 +7,7 @@ RSpec.describe PlanningCenter::Endpoints::RecurringDonationDesignations do
 
   describe '#recurring_donation_designations', :vcr do
     before do
-      @recurring_donation_designations = client.recurring_donation_designations(358_916)
+      @recurring_donation_designations = client.recurring_donation_designations(358_916).body
     end
 
     it 'returns an array' do
@@ -22,7 +22,7 @@ RSpec.describe PlanningCenter::Endpoints::RecurringDonationDesignations do
 
   describe '#recurring_donation_designation', :vcr do
     before do
-      @recurring_donation_designation = client.recurring_donation_designation(358_916, 383_099)
+      @recurring_donation_designation = client.recurring_donation_designation(358_916, 383_099).body
     end
 
     it 'returns a recurring_donation_designation object' do
