@@ -54,7 +54,7 @@ module PlanningCenter
       response = client.get(
         "people/v2/people/#{id}/field_data",
         { where: params, include: [:field_option] }
-      )['data']
+      ).body['data']
 
       response.map do |hsh|
         attrs = FieldDatum.format_response(hsh)
